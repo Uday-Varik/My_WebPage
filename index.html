@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uday Varikupala | Senior Data Scientist</title>
+    <title>Uday Varikuppala | Senior Data Scientist</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,6 +20,9 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -33,7 +36,7 @@
         <div class="container">
             <div class="hero-content">
                 <p class="hero-subtitle">Senior Data Scientist</p>
-                <h1 class="hero-title">Uday Varikupala</h1>
+                <h1 class="hero-title">Uday Varikuppala</h1>
                 <p class="hero-description">
                     6+ Years Experience | NLP Specialist | RAG Architecture Engineer<br>
                     Fintech • Healthcare • Enterprise AI
@@ -210,11 +213,12 @@
                 <h2>Featured Projects</h2>
                 <p>Key technical achievements</p>
             </div>
-            <div class="projects-grid">
+            <div class="projects-list">
                 <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-hospital"></i></div>
-                    <h3>AI-Powered Patient No-Show Prevention</h3>
-                    <p>Healthcare NLP & ML pipeline combining appointment history, weather data, and geospatial patterns to forecast patient no-shows. Delivered $1.2M annual revenue recovery.</p>
+                    <h3><span class="project-arrow">&gt;</span> AI-Powered Patient No-Show Prevention</h3>
+                    <p><span class="label-problem">PROBLEM:</span> Manual patient scheduling led to high no-show rates and significant revenue loss in healthcare operations.</p>
+                    <p><span class="label-solution">SOLUTION:</span> Healthcare NLP &amp; ML pipeline combining appointment history, weather data, and geospatial patterns to forecast no-shows via real-time API.</p>
+                    <p><span class="label-impact">IMPACT:</span> Delivered $1.2M annual revenue recovery serving 10,000+ daily predictions at sub-50ms latency.</p>
                     <div class="project-tags">
                         <span>XGBoost</span>
                         <span>Real-time API</span>
@@ -222,9 +226,10 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-dollar-sign"></i></div>
-                    <h3>Customer Lifetime Value Prediction</h3>
-                    <p>Fintech ML engine using K-Means, survival analysis, and gradient boosting to model churn probability and LTV. Surfaced $2.7M ROI opportunity.</p>
+                    <h3><span class="project-arrow">&gt;</span> Customer Lifetime Value Prediction</h3>
+                    <p><span class="label-problem">PROBLEM:</span> Inability to accurately predict customer churn and lifetime value in fintech mortgage operations.</p>
+                    <p><span class="label-solution">SOLUTION:</span> Fintech ML engine using K-Means clustering, survival analysis, and gradient boosting to model churn probability and LTV segments.</p>
+                    <p><span class="label-impact">IMPACT:</span> Surfaced $2.7M ROI opportunity and reduced manual processing errors by 70%.</p>
                     <div class="project-tags">
                         <span>Clustering</span>
                         <span>Survival Analysis</span>
@@ -232,9 +237,10 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
-                    <h3>Intelligent User Journey Analytics</h3>
-                    <p>E-commerce NLP pipeline processing millions of user interactions. Identified Safari bug causing $430K monthly revenue loss.</p>
+                    <h3><span class="project-arrow">&gt;</span> Intelligent User Journey Analytics</h3>
+                    <p><span class="label-problem">PROBLEM:</span> Undetected platform bugs causing silent revenue loss across millions of e-commerce user sessions.</p>
+                    <p><span class="label-solution">SOLUTION:</span> NLP pipeline processing millions of user interactions with anomaly detection and causal inference to surface hidden behavioral patterns.</p>
+                    <p><span class="label-impact">IMPACT:</span> Identified Safari bug causing $430K monthly revenue loss, enabling immediate fix and recovery.</p>
                     <div class="project-tags">
                         <span>Anomaly Detection</span>
                         <span>Causal Inference</span>
@@ -279,26 +285,33 @@
                 <h2>Get In Touch</h2>
                 <p>Let's discuss your next AI project</p>
             </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>uday.v3669@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+1 (901) 633-3927</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Memphis, TN</span>
-                    </div>
+            <div class="contact-email-display">
+                <i class="fas fa-envelope"></i>
+                <span>uday.v3669@gmail.com</span>
+            </div>
+            <div class="contact-form-wrapper">
+                <div class="form-success" id="formSuccess">
+                    <i class="fas fa-check-circle"></i> Message sent! I'll get back to you soon.
                 </div>
-                <div class="contact-social">
-                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                    <a href="#" class="social-link"><i class="fas fa-file-pdf"></i> Resume</a>
-                </div>
+                <form id="contactForm" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="contactName">Name</label>
+                        <input type="text" id="contactName" name="name" placeholder="e.g. John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" name="email" placeholder="e.g. john@doe.com" required>
+                    </div>
+                    <div class="form-group form-group-message">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" name="message" placeholder="Please describe what you need help with..." maxlength="500" required></textarea>
+                        <span class="char-counter" id="charCounter">0/500</span>
+                    </div>
+                    <button type="submit" class="btn-send">
+                        Send Message <i class="fas fa-envelope"></i>
+                    </button>
+                    <p class="form-privacy">Your email address is only used to reply to you. No spam, no third-party sharing.</p>
+                </form>
             </div>
         </div>
     </section>
@@ -306,7 +319,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Uday Varikupala. All rights reserved.</p>
+            <p>&copy; 2026 Uday Varikuppala. All rights reserved.</p>
         </div>
     </footer>
 

@@ -28,10 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navbar background on scroll
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', function() {
+        const isDark = document.body.classList.contains('dark-mode');
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.background = isDark ? 'rgba(15, 23, 42, 0.99)' : 'rgba(255, 255, 255, 0.98)';
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.background = '';
         }
     });
     
@@ -78,6 +79,80 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.project-card').forEach((card, index) => {
         card.style.transitionDelay = `${index * 0.1}s`;
     });
+
+    // Contact form: character counter
+    const messageField = document.getElementById('contactMessage');
+    const charCounter = document.getElementById('charCounter');
+    if (messageField && charCounter) {
+        messageField.addEventListener('input', function() {
+            const len = this.value.length;
+            charCounter.textContent = `${len}/500`;
+            charCounter.style.color = len > 450 ? 'rgba(225,29,72,0.7)' : 'rgba(255,255,255,0.4)';
+        });
+    }
+
+    // Contact form: submit via Web3Forms
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const name = document.getElementById('contactName').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const message = document.getElementById('contactMessage').value.trim();
+
+            if (!name || !email || !message) return;
+
+            const submitBtn = contactForm.querySelector('.btn-send');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
+
+            try {
+                const res = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify({
+                        access_key: '8a06ef9f-a39e-4ca3-afa3-b772c4351249',
+                        subject: 'Portfolio Contact from ' + name,
+                        name,
+                        email,
+                        message
+                    })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    const successMsg = document.getElementById('formSuccess');
+                    contactForm.style.display = 'none';
+                    successMsg.classList.add('visible');
+                } else {
+                    throw new Error(data.message || 'Submission failed');
+                }
+            } catch (err) {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Send Message <i class="fas fa-envelope"></i>';
+                alert('Sorry, something went wrong. Please try again or email uday.v3669@gmail.com directly.');
+            }
+        });
+    }
+
+    // Dark / Light mode toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+
+    function applyTheme(isDark) {
+        document.body.classList.toggle('dark-mode', isDark);
+        themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    }
+
+    const savedTheme = localStorage.getItem('theme');
+    applyTheme(savedTheme === 'dark');
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const isDark = !document.body.classList.contains('dark-mode');
+            applyTheme(isDark);
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    }
     
     // Typing effect for hero subtitle
     const heroSubtitle = document.querySelector('.hero-subtitle');
