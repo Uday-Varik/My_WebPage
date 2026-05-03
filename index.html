@@ -1,328 +1,602 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uday Varikuppala | Senior Data Scientist</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uday Varikuppala — Senior Data Scientist</title>
+  <meta name="description" content="Senior Data Scientist with 6+ years building production-grade GenAI, RAG, and Causal ML systems across Fintech, Healthcare, and Enterprise AI." />
+  <link rel="preconnect" href="https://fonts.bunny.net" />
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700,800,900&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">UV</div>
-            <ul class="nav-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+
+  <!-- Custom cursor -->
+  <div class="cursor-dot"  id="cursorDot"  aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- ═══ NAV ═══ -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">UV<span class="nav-logo-dot">.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about"      class="nav-link">About</a>
+        <a href="#skills"     class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects"   class="nav-link">Projects</a>
+        <a href="#contact"    class="nav-link">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a href="#contact" class="nav-cta mag">Hire Me</a>
+        <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" id="hero">
+      <div class="orb orb-1" aria-hidden="true"></div>
+      <div class="orb orb-2" aria-hidden="true"></div>
+      <div class="orb orb-3" aria-hidden="true"></div>
+
+      <div class="container hero-layout">
+
+        <div class="hero-left">
+          <div class="hero-tag">
+            <span class="hero-tag-dot"></span>
+            Available for new opportunities
+          </div>
+
+          <div class="hero-title-wrap">
+            <h1 class="hero-title">
+              <span class="hero-line hero-line-1">Uday</span>
+              <span class="hero-line hero-line-2">Varikuppala</span>
+            </h1>
+          </div>
+
+          <p class="hero-role">Senior Data Scientist · GenAI &amp; Causal ML</p>
+
+          <p class="hero-desc">
+            6+ years building production-grade LLM, RAG, and Causal ML systems
+            across Fintech, Healthcare, and Enterprise AI.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact"    class="btn btn-primary mag">Get In Touch</a>
+            <a href="#experience" class="btn btn-ghost mag">View Work</a>
+          </div>
+
+          <div class="hero-links">
+            <a href="#" class="hero-link">LinkedIn ↗</a>
+            <a href="#" class="hero-link">GitHub ↗</a>
+            <a href="mailto:uday.v3669@gmail.com" class="hero-link">Email ↗</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="stats-card">
+            <div class="stat-item">
+              <span class="stat-val" data-count="6" data-suffix="+">6+</span>
+              <span class="stat-key">Years Experience</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-val">$4M+</span>
+              <span class="stat-key">Revenue Impact</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-val" data-count="3">3</span>
+              <span class="stat-key">Industries</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-chips">
+              <span>LangChain</span><span>LangGraph</span><span>RAG</span>
+              <span>GraphRAG</span><span>PyTorch</span><span>Pinecone</span>
+              <span>XGBoost</span><span>SageMaker</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══ MARQUEE ═══ -->
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-inner">
+        <div class="marquee-group">
+          <span>Large Language Models</span><span class="sep">·</span>
+          <span>RAG Architecture</span><span class="sep">·</span>
+          <span>GraphRAG</span><span class="sep">·</span>
+          <span>Causal ML</span><span class="sep">·</span>
+          <span>LangChain</span><span class="sep">·</span>
+          <span>AWS SageMaker</span><span class="sep">·</span>
+          <span>PyTorch</span><span class="sep">·</span>
+          <span>XGBoost</span><span class="sep">·</span>
+          <span>SHAP / CausalForest</span><span class="sep">·</span>
+          <span>Pinecone</span><span class="sep">·</span>
+          <span>MLflow</span><span class="sep">·</span>
+          <span>Apache Spark</span><span class="sep">·</span>
+          <span>Hugging Face</span><span class="sep">·</span>
+          <span>FastAPI</span><span class="sep">·</span>
+          <span>Kubernetes</span><span class="sep">·</span>
+        </div>
+        <!-- duplicate for seamless loop -->
+        <div class="marquee-group" aria-hidden="true">
+          <span>Large Language Models</span><span class="sep">·</span>
+          <span>RAG Architecture</span><span class="sep">·</span>
+          <span>GraphRAG</span><span class="sep">·</span>
+          <span>Causal ML</span><span class="sep">·</span>
+          <span>LangChain</span><span class="sep">·</span>
+          <span>AWS SageMaker</span><span class="sep">·</span>
+          <span>PyTorch</span><span class="sep">·</span>
+          <span>XGBoost</span><span class="sep">·</span>
+          <span>SHAP / CausalForest</span><span class="sep">·</span>
+          <span>Pinecone</span><span class="sep">·</span>
+          <span>MLflow</span><span class="sep">·</span>
+          <span>Apache Spark</span><span class="sep">·</span>
+          <span>Hugging Face</span><span class="sep">·</span>
+          <span>FastAPI</span><span class="sep">·</span>
+          <span>Kubernetes</span><span class="sep">·</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ ABOUT ═══ -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-label">
+          <span class="section-num">01</span>
+          <span class="section-tag">Background</span>
+        </div>
+        <h2 class="section-title reveal-title">About<br><em>Me</em></h2>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              Senior Data Scientist with 6+ years building and evaluating foundation and generative AI
+              systems — LLMs, RAG, knowledge graphs — to improve product quality and user experience.
+              Expert in designing model evaluation frameworks and benchmarks, including LLM-as-a-judge
+              workflows, statistical testing, and failure analysis to surface edge cases and improve robustness.
+            </p>
+            <p>
+              Proficient in Python, PyTorch, TensorFlow, and production ML tooling. Strong technical-reporting
+              and stakeholder communication skills to translate evaluation results into product decisions.
+              Proven track record in Causal ML — applying CausalForest, SHAP, and uplift modeling to uncover
+              bias, latent drivers, and actionable improvements across deployed models.
+            </p>
+            <div class="about-kpis">
+              <div class="kpi">
+                <span class="kpi-val" data-count="6" data-suffix="+">6+</span>
+                <span class="kpi-lbl">Yrs Experience</span>
+              </div>
+              <div class="kpi">
+                <span class="kpi-val">$4M+</span>
+                <span class="kpi-lbl">Revenue Impact</span>
+              </div>
+              <div class="kpi">
+                <span class="kpi-val" data-count="3">3</span>
+                <span class="kpi-lbl">Industries</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-features">
+            <div class="feature-card reveal-card">
+              <div class="fc-num">01</div>
+              <div class="fc-body">
+                <h3 class="fc-title">GenAI &amp; LLM Systems</h3>
+                <p class="fc-desc">RAG, GraphRAG, multi-agent workflows, LLM-as-a-judge evaluation, and prompt engineering at scale</p>
+              </div>
+            </div>
+            <div class="feature-card reveal-card">
+              <div class="fc-num">02</div>
+              <div class="fc-body">
+                <h3 class="fc-title">Causal ML &amp; Explainability</h3>
+                <p class="fc-desc">CausalForest, SHAP, uplift modeling, and A/B experiment design to uncover latent drivers and reduce bias</p>
+              </div>
+            </div>
+            <div class="feature-card reveal-card">
+              <div class="fc-num">03</div>
+              <div class="fc-body">
+                <h3 class="fc-title">MLOps &amp; Production</h3>
+                <p class="fc-desc">SageMaker Pipelines, CI/CD, model versioning, and observability for reliable production ML systems</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SKILLS ═══ -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-label">
+          <span class="section-num">02</span>
+          <span class="section-tag">Capabilities</span>
+        </div>
+        <h2 class="section-title reveal-title">Technical<br><em>Skills</em></h2>
+
+        <div class="skills-grid">
+
+          <div class="skill-card reveal-card">
+            <div class="sk-header">
+              <span class="sk-num">01</span>
+              <h3 class="sk-name">Generative AI &amp; RAG</h3>
+            </div>
+            <div class="sk-tags">
+              <span>RAG / GraphRAG</span><span>Multi-Agent</span>
+              <span>LangChain / Haystack</span><span>LLMs (OpenAI, Anthropic)</span>
+              <span>Agentic AI</span><span>Prompt Engineering</span>
+              <span>Knowledge Graphs</span><span>Hugging Face</span>
+              <span>Semantic Search</span><span>Vector Embeddings</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal-card">
+            <div class="sk-header">
+              <span class="sk-num">02</span>
+              <h3 class="sk-name">ML &amp; Data Science</h3>
+            </div>
+            <div class="sk-tags">
+              <span>XGBoost / LightGBM</span><span>TensorFlow / PyTorch</span>
+              <span>Scikit-learn</span><span>Deep Learning</span>
+              <span>NLP / NLU</span><span>Reinforcement Learning</span>
+              <span>Bayesian Networks</span><span>Anomaly Detection</span>
+              <span>Optuna</span><span>Feature Engineering</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal-card">
+            <div class="sk-header">
+              <span class="sk-num">03</span>
+              <h3 class="sk-name">Languages &amp; Data</h3>
+            </div>
+            <div class="sk-tags">
+              <span>Python</span><span>Pandas / NumPy</span>
+              <span>SQL / PostgreSQL</span><span>Snowflake</span>
+              <span>R / Scala</span><span>Apache Spark</span>
+              <span>Kafka</span><span>Airflow</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal-card">
+            <div class="sk-header">
+              <span class="sk-num">04</span>
+              <h3 class="sk-name">MLOps &amp; Cloud</h3>
+            </div>
+            <div class="sk-tags">
+              <span>AWS SageMaker</span><span>Docker / K8s</span>
+              <span>MLflow</span><span>CI/CD (GitHub Actions)</span>
+              <span>SageMaker Feature Store</span><span>Vertex AI</span>
+              <span>GCP / Azure ML</span><span>Terraform</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal-card">
+            <div class="sk-header">
+              <span class="sk-num">05</span>
+              <h3 class="sk-name">Causal &amp; Responsible AI</h3>
+            </div>
+            <div class="sk-tags">
+              <span>SHAP / LIME</span><span>CausalForest</span>
+              <span>Uplift Modeling</span><span>A/B Testing</span>
+              <span>ML Bias Analysis</span><span>Explainable AI</span>
+              <span>Latent Driver Analysis</span>
+            </div>
+          </div>
+
+          <div class="skill-card reveal-card">
+            <div class="sk-header">
+              <span class="sk-num">06</span>
+              <h3 class="sk-name">Visualization &amp; BI</h3>
+            </div>
+            <div class="sk-tags">
+              <span>Power BI</span><span>Tableau</span><span>Streamlit</span>
+              <span>Plotly / Matplotlib</span><span>Dashboarding</span>
+              <span>Pinecone</span><span>Redis</span><span>FastAPI</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ EXPERIENCE ═══ -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-label">
+          <span class="section-num">03</span>
+          <span class="section-tag">Career</span>
+        </div>
+        <h2 class="section-title reveal-title">Work<br><em>Experience</em></h2>
+
+        <div class="exp-list">
+
+          <article class="exp-card reveal-card">
+            <div class="exp-head">
+              <div class="exp-info">
+                <h3 class="exp-co">Quicc</h3>
+                <p class="exp-loc">Memphis, TN</p>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-role">Senior Data Scientist / ML Engineering</span>
+                <span class="exp-date">Aug 2023 – Present</span>
+              </div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Built cross-domain evaluation framework stitching behavioral, engagement, and semantic signals; drove a statistically significant 25% lift in conversation completion rate</li>
+              <li>Architected RAG, multi-agent workflows, and LangChain knowledge-graph pipelines for semantic QA and conversational AI; cut R&amp;D cycle time for new LLM features by 30%</li>
+              <li>Reduced data access latency by 40% via embedding large text corpora and generative SQL workflows on AWS Glue and PostgreSQL</li>
+              <li>Engineered SageMaker Pipelines with AWS Feature Store for automated model versioning and retraining, reducing model downtime by 60%</li>
+              <li>Applied SHAP and CausalForest for failure analysis, uncovering bias, underspecification, and latent drivers in deployed GenAI models</li>
+              <li>Built Tableau and Streamlit dashboards translating complex GenAI metrics into executive narratives used in two funding rounds</li>
+              <li>Mentored 2 junior data scientists and 1 intern on RAG architectures, causal reasoning, and ML lifecycle best practices</li>
             </ul>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
-                <i class="fas fa-moon" id="themeIcon"></i>
-            </button>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="exp-chips">
+              <span>LangChain</span><span>RAG</span><span>Multi-Agent</span>
+              <span>SageMaker</span><span>SHAP</span><span>CausalForest</span><span>Streamlit</span>
             </div>
-        </div>
-    </nav>
+          </article>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <p class="hero-subtitle">Senior Data Scientist</p>
-                <h1 class="hero-title">Uday Varikuppala</h1>
-                <p class="hero-description">
-                    6+ Years Experience | NLP Specialist | RAG Architecture Engineer<br>
-                    Fintech • Healthcare • Enterprise AI
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                    <a href="#experience" class="btn btn-secondary">View Experience</a>
-                </div>
-                <div class="hero-social">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
-                </div>
+          <article class="exp-card reveal-card">
+            <div class="exp-head">
+              <div class="exp-info">
+                <h3 class="exp-co">Caliber Home Loans</h3>
+                <p class="exp-loc">Hyderabad, India</p>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-role">Data Scientist — Retail Financial Decision Science &amp; ML Engineering</span>
+                <span class="exp-date">May 2021 – July 2023</span>
+              </div>
             </div>
+            <ul class="exp-bullets">
+              <li>Built cross-domain ML frameworks for mortgage risk, prepayment prediction, and underwriting eligibility using causal reasoning and statistical modeling</li>
+              <li>Deployed production ML models via Kafka-driven microservices and CI/CD workflows, cutting end-to-end pipeline latency by over 50%</li>
+              <li>Applied SHAP-based explainability and causal reasoning to underwriting workflows, improving classification confidence with bias-aware model governance</li>
+              <li>Migrated legacy batch ETL into scalable Spark- and Kafka-driven pipelines, reducing data processing time by over 50%</li>
+              <li>Built Power BI dashboards delivering live predictive KPIs for senior risk and finance leaders</li>
+              <li>Implemented Great Expectations data quality checks and confidence-interval monitoring to detect drift and regressions</li>
+            </ul>
+            <div class="exp-chips">
+              <span>XGBoost</span><span>SHAP</span><span>Kafka</span>
+              <span>Apache Spark</span><span>Power BI</span><span>Great Expectations</span>
+            </div>
+          </article>
+
+          <article class="exp-card reveal-card">
+            <div class="exp-head">
+              <div class="exp-info">
+                <h3 class="exp-co">Novartis</h3>
+                <p class="exp-loc">Hyderabad, India</p>
+              </div>
+              <div class="exp-meta">
+                <span class="exp-role">Senior Data Scientist — Healthcare Decision Science &amp; Clinical AI</span>
+                <span class="exp-date">Jan 2020 – April 2021</span>
+              </div>
+            </div>
+            <ul class="exp-bullets">
+              <li>Built cross-domain learning framework for clinical scheduling combining behavioral, geospatial, and demographic signals, recovering an estimated $1M+ in revenue through AI-driven operational decisions</li>
+              <li>Applied causal reasoning and engineered temporal, weather, and geospatial features to improve model evaluation metrics by ~20% over baseline</li>
+              <li>Deployed production-grade real-time inference API with FastAPI serving 10,000+ daily predictions at sub-50ms latency</li>
+              <li>Used SHAP-based XAI to surface model behavior insights for clinical teams, translating outputs into actionable operational changes</li>
+            </ul>
+            <div class="exp-chips">
+              <span>FastAPI</span><span>SHAP</span><span>Causal ML</span>
+              <span>Geospatial ML</span><span>Real-time Inference</span>
+            </div>
+          </article>
+
         </div>
-        <div class="hero-bg"></div>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>About Me</h2>
-                <p>Senior Data Scientist specializing in Natural Language Processing</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Senior Data Scientist with 6+ years of hands-on experience designing scalable NLP workflows, 
-                        implementing advanced RAG architectures, and building LangChain and LangGraph applications 
-                        that modernize content delivery and AI-enabled solutions across Life Sciences, Healthcare, 
-                        and enterprise AI platforms.
-                    </p>
-                    <p>
-                        Deep expertise in text processing pipelines including indexing, vectorization, prompting, 
-                        fine-tuning, summarization, and context management. Proven experience architecting 
-                        retrieval-augmented generation (RAG), VRAG, and GraphRAG systems using vector stores 
-                        including Pinecone and FAISS.
-                    </p>
-                    <div class="about-stats">
-                        <div class="stat">
-                            <span class="stat-number">6+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">$1M+</span>
-                            <span class="stat-label">Revenue Impact</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">3</span>
-                            <span class="stat-label">Industries</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- ═══ PROJECTS ═══ -->
+    <section id="projects" class="section section-alt">
+      <div class="container">
+        <div class="section-label">
+          <span class="section-num">04</span>
+          <span class="section-tag">Case Studies</span>
         </div>
+        <h2 class="section-title reveal-title">Featured<br><em>Projects</em></h2>
+
+        <div class="projects-grid">
+
+          <article class="project-card reveal-card">
+            <div class="proj-number">01</div>
+            <h3 class="proj-title">AI-Powered Patient No-Show Prevention</h3>
+            <div class="proj-impact-line">
+              <span class="impact-num">$1.2M</span>
+              <span class="impact-lbl">Annual Revenue Recovery</span>
+            </div>
+            <div class="proj-sections">
+              <div class="proj-block">
+                <span class="proj-label">Problem</span>
+                <p>Manual scheduling led to high no-show rates. Rule-based systems couldn't incorporate dynamic signals like weather or geospatial proximity.</p>
+              </div>
+              <div class="proj-block">
+                <span class="proj-label">Solution</span>
+                <p>Healthcare NLP &amp; ML pipeline combining appointment history, weather data, and geospatial patterns via a real-time FastAPI inference service on AWS.</p>
+              </div>
+              <div class="proj-block">
+                <span class="proj-label">Impact</span>
+                <p class="proj-highlight">10,000+ daily predictions at sub-50ms latency. $1.2M annual revenue recovery.</p>
+              </div>
+            </div>
+            <div class="proj-tags">
+              <span>XGBoost</span><span>FastAPI</span><span>SHAP</span><span>Geospatial ML</span><span>AWS</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal-card">
+            <div class="proj-number">02</div>
+            <h3 class="proj-title">Customer Lifetime Value Prediction</h3>
+            <div class="proj-impact-line">
+              <span class="impact-num">$2.7M</span>
+              <span class="impact-lbl">ROI Opportunity Surfaced</span>
+            </div>
+            <div class="proj-sections">
+              <div class="proj-block">
+                <span class="proj-label">Problem</span>
+                <p>Inability to predict customer churn and LTV in fintech mortgage operations resulted in missed retention opportunities and poor marketing spend.</p>
+              </div>
+              <div class="proj-block">
+                <span class="proj-label">Solution</span>
+                <p>Fintech ML engine using K-Means clustering, survival analysis, and gradient boosting to model churn probability and LTV segments with Optuna tuning.</p>
+              </div>
+              <div class="proj-block">
+                <span class="proj-label">Impact</span>
+                <p class="proj-highlight">$2.7M ROI opportunity surfaced. Reduced manual processing errors by 70%.</p>
+              </div>
+            </div>
+            <div class="proj-tags">
+              <span>K-Means</span><span>Survival Analysis</span><span>LightGBM</span><span>Optuna</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal-card">
+            <div class="proj-number">03</div>
+            <h3 class="proj-title">Intelligent User Journey Analytics</h3>
+            <div class="proj-impact-line">
+              <span class="impact-num">$430K</span>
+              <span class="impact-lbl">Monthly Revenue Loss Stopped</span>
+            </div>
+            <div class="proj-sections">
+              <div class="proj-block">
+                <span class="proj-label">Problem</span>
+                <p>Undetected platform bugs causing silent revenue loss across millions of e-commerce sessions. Standard monitoring missed browser-specific anomalies.</p>
+              </div>
+              <div class="proj-block">
+                <span class="proj-label">Solution</span>
+                <p>NLP pipeline processing millions of user interaction logs with anomaly detection and causal inference to surface hidden behavioral patterns.</p>
+              </div>
+              <div class="proj-block">
+                <span class="proj-label">Impact</span>
+                <p class="proj-highlight">Identified Safari bug causing $430K/month revenue loss — enabling immediate fix.</p>
+              </div>
+            </div>
+            <div class="proj-tags">
+              <span>Anomaly Detection</span><span>Causal Inference</span><span>Kafka</span><span>NLP</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2>Technical Skills</h2>
-                <p>Core competencies and technologies</p>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3><i class="fas fa-brain"></i> NLP & AI</h3>
-                    <div class="skill-tags">
-                        <span class="tag">LangChain</span>
-                        <span class="tag">LangGraph</span>
-                        <span class="tag">RAG / VRAG / GraphRAG</span>
-                        <span class="tag">Prompt Engineering</span>
-                        <span class="tag">LLMs (OpenAI, Anthropic)</span>
-                        <span class="tag">Hugging Face</span>
-                        <span class="tag">Text Classification</span>
-                        <span class="tag">Semantic Search</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-database"></i> Vector Stores</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Pinecone</span>
-                        <span class="tag">FAISS</span>
-                        <span class="tag">Redis</span>
-                        <span class="tag">PostgreSQL (pgvector)</span>
-                        <span class="tag">Embedding Models</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-code"></i> Languages & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Pandas / NumPy</span>
-                        <span class="tag">Scikit-learn</span>
-                        <span class="tag">TensorFlow / PyTorch</span>
-                        <span class="tag">XGBoost / LightGBM</span>
-                        <span class="tag">Advanced SQL</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <h3><i class="fas fa-cloud"></i> MLOps & Cloud</h3>
-                    <div class="skill-tags">
-                        <span class="tag">AWS (SageMaker, Lambda)</span>
-                        <span class="tag">Docker / Kubernetes</span>
-                        <span class="tag">MLflow</span>
-                        <span class="tag">CI/CD (GitHub Actions)</span>
-                        <span class="tag">Feature Store</span>
-                        <span class="tag">Apache Spark</span>
-                    </div>
-                </div>
-            </div>
+    <!-- ═══ EDUCATION ═══ -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-label">
+          <span class="section-num">05</span>
+          <span class="section-tag">Credentials</span>
         </div>
+        <h2 class="section-title reveal-title">Education &amp;<br><em>Certifications</em></h2>
+
+        <div class="edu-grid">
+
+          <div class="edu-card reveal-card">
+            <div class="edu-top">
+              <span class="edu-icon">🎓</span>
+              <h3 class="edu-degree">Master of Science in Data Science</h3>
+            </div>
+            <p class="edu-school">University of Memphis</p>
+            <p class="edu-detail">Top 1% GPA · Currently Enrolled</p>
+            <p class="edu-courses">Machine Learning · Deep Learning · GenAI · LLMs · RAG · Causal ML · MLOps · Cloud AI</p>
+          </div>
+
+          <div class="edu-card reveal-card">
+            <div class="edu-top">
+              <span class="edu-icon">📜</span>
+              <h3 class="edu-degree">Certifications</h3>
+            </div>
+            <ul class="cert-list">
+              <li>Microsoft Certified: Power BI Data Analyst Associate</li>
+              <li>Advanced Google Analytics — Google</li>
+              <li>Mathematics for ML &amp; Data Science — Coursera / DeepLearning.AI</li>
+              <li>Programming Essentials in Python — Cisco Networking Academy</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="section-header">
-                <h2>Work Experience</h2>
-                <p>Professional journey</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">Aug 2023 - Present</span>
-                        <h3>Senior Data Scientist (NLP)</h3>
-                        <h4>Quicc | Memphis, TN</h4>
-                        <ul>
-                            <li>Built LangChain & LangGraph applications with RAG architectures, reducing R&D cycle time by 30%</li>
-                            <li>Implemented Pinecone vector store with 35% latency improvement for semantic search</li>
-                            <li>Developed prompting frameworks and fine-tuning approaches for LLM applications</li>
-                            <li>Conducted benchmark testing using Arize AI, reducing model downtime by 60%</li>
-                            <li>Mentored 2 junior data scientists and 1 intern on RAG architectures</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">May 2021 - July 2023</span>
-                        <h3>Data Scientist - Fintech NLP</h3>
-                        <h4>Caliber Home Loans | Hyderabad, India</h4>
-                        <ul>
-                            <li>Designed NLP workflows for mortgage document extraction and classification</li>
-                            <li>Reduced manual financial processing errors by 70%</li>
-                            <li>Cut daily reporting time from hours to under 10 minutes</li>
-                            <li>Built Power BI executive visualizations for risk and finance leadership</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">Jan 2020 - April 2021</span>
-                        <h3>Senior Data Scientist - Healthcare AI</h3>
-                        <h4>Novartis | Hyderabad</h4>
-                        <ul>
-                            <li>Built AI models predicting patient no-shows, delivering $1M+ revenue recovery</li>
-                            <li>Served 10,000+ daily predictions at sub-50ms latency via real-time API</li>
-                            <li>Implemented SHAP-based explainability for clinical operations teams</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+    <!-- ═══ CONTACT ═══ -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-label">
+          <span class="section-num">06</span>
+          <span class="section-tag">Let's Talk</span>
         </div>
+        <h2 class="section-title reveal-title">Get In<br><em>Touch</em></h2>
+        <p class="contact-sub">Open to senior IC roles, technical consulting, and research collaborations at the intersection of LLMs and production systems.</p>
+
+        <div class="contact-grid">
+
+          <div class="contact-left">
+            <p class="contact-intro">
+              Whether you're building a new AI product, evaluating a deployed model, or need a senior
+              technical voice — I'd love to hear about it.
+            </p>
+            <a href="mailto:uday.v3669@gmail.com" class="contact-email-link">
+              uday.v3669@gmail.com
+            </a>
+            <p class="contact-note">
+              Your email address is only used to reply to you. No spam, no third-party sharing.
+            </p>
+          </div>
+
+          <div class="contact-form-box">
+            <div class="form-success" id="formSuccess" role="alert">
+              ✓ Message sent — I'll get back to you soon.
+            </div>
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <label for="contactName">Name</label>
+                <input type="text" id="contactName" name="name" placeholder="Jane Smith" required />
+              </div>
+              <div class="form-row">
+                <label for="contactEmail">Email</label>
+                <input type="email" id="contactEmail" name="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-row form-row-msg">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" name="message" placeholder="What's on your mind?" maxlength="500" required></textarea>
+                <span class="char-count" id="charCounter">0 / 500</span>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full mag" id="submitBtn">Send Message</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2>Featured Projects</h2>
-                <p>Key technical achievements</p>
-            </div>
-            <div class="projects-list">
-                <div class="project-card">
-                    <h3><span class="project-arrow">&gt;</span> AI-Powered Patient No-Show Prevention</h3>
-                    <p><span class="label-problem">PROBLEM:</span> Manual patient scheduling led to high no-show rates and significant revenue loss in healthcare operations.</p>
-                    <p><span class="label-solution">SOLUTION:</span> Healthcare NLP &amp; ML pipeline combining appointment history, weather data, and geospatial patterns to forecast no-shows via real-time API.</p>
-                    <p><span class="label-impact">IMPACT:</span> Delivered $1.2M annual revenue recovery serving 10,000+ daily predictions at sub-50ms latency.</p>
-                    <div class="project-tags">
-                        <span>XGBoost</span>
-                        <span>Real-time API</span>
-                        <span>SHAP</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3><span class="project-arrow">&gt;</span> Customer Lifetime Value Prediction</h3>
-                    <p><span class="label-problem">PROBLEM:</span> Inability to accurately predict customer churn and lifetime value in fintech mortgage operations.</p>
-                    <p><span class="label-solution">SOLUTION:</span> Fintech ML engine using K-Means clustering, survival analysis, and gradient boosting to model churn probability and LTV segments.</p>
-                    <p><span class="label-impact">IMPACT:</span> Surfaced $2.7M ROI opportunity and reduced manual processing errors by 70%.</p>
-                    <div class="project-tags">
-                        <span>Clustering</span>
-                        <span>Survival Analysis</span>
-                        <span>Optuna</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3><span class="project-arrow">&gt;</span> Intelligent User Journey Analytics</h3>
-                    <p><span class="label-problem">PROBLEM:</span> Undetected platform bugs causing silent revenue loss across millions of e-commerce user sessions.</p>
-                    <p><span class="label-solution">SOLUTION:</span> NLP pipeline processing millions of user interactions with anomaly detection and causal inference to surface hidden behavioral patterns.</p>
-                    <p><span class="label-impact">IMPACT:</span> Identified Safari bug causing $430K monthly revenue loss, enabling immediate fix and recovery.</p>
-                    <div class="project-tags">
-                        <span>Anomaly Detection</span>
-                        <span>Causal Inference</span>
-                        <span>Kafka</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  </main>
 
-    <!-- Education Section -->
-    <section class="education">
-        <div class="container">
-            <div class="section-header">
-                <h2>Education & Certifications</h2>
-            </div>
-            <div class="education-grid">
-                <div class="education-card">
-                    <div class="education-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Master of Science in Data Science</h3>
-                    <h4>University of Memphis</h4>
-                    <p>Graduated Top 1% of Class</p>
-                    <p class="education-details">NLP, Machine Learning, Deep Learning, LLMs, RAG, MLOps, Cloud AI</p>
-                </div>
-                <div class="education-card">
-                    <div class="education-icon"><i class="fas fa-certificate"></i></div>
-                    <h3>Certifications</h3>
-                    <ul class="cert-list">
-                        <li>Microsoft Certified: Power BI Data Analyst Associate</li>
-                        <li>Advanced Google Analytics</li>
-                        <li>Mathematics for ML & Data Science (DeepLearning.AI)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="footer-name">Uday Varikuppala</p>
+        <p class="footer-role">Senior Data Scientist · GenAI · Causal ML</p>
+      </div>
+      <p class="footer-copy">© 2026 Uday Varikuppala</p>
+    </div>
+  </footer>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>Let's discuss your next AI project</p>
-            </div>
-            <div class="contact-email-display">
-                <i class="fas fa-envelope"></i>
-                <span>uday.v3669@gmail.com</span>
-            </div>
-            <div class="contact-form-wrapper">
-                <div class="form-success" id="formSuccess">
-                    <i class="fas fa-check-circle"></i> Message sent! I'll get back to you soon.
-                </div>
-                <form id="contactForm" class="contact-form" novalidate>
-                    <div class="form-group">
-                        <label for="contactName">Name</label>
-                        <input type="text" id="contactName" name="name" placeholder="e.g. John Doe" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="contactEmail">Email</label>
-                        <input type="email" id="contactEmail" name="email" placeholder="e.g. john@doe.com" required>
-                    </div>
-                    <div class="form-group form-group-message">
-                        <label for="contactMessage">Message</label>
-                        <textarea id="contactMessage" name="message" placeholder="Please describe what you need help with..." maxlength="500" required></textarea>
-                        <span class="char-counter" id="charCounter">0/500</span>
-                    </div>
-                    <button type="submit" class="btn-send">
-                        Send Message <i class="fas fa-envelope"></i>
-                    </button>
-                    <p class="form-privacy">Your email address is only used to reply to you. No spam, no third-party sharing.</p>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Uday Varikuppala. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
