@@ -7,13 +7,17 @@
 /* ─── PERSONAL DETAILS ─────────────────────────────────
    Single source of truth for contact links. Nothing below
    is hardcoded in index.html — every data-bind target gets
-   its href (and, where flagged, its visible text) from here. */
+   its href (and, where flagged, its visible text) from here.
+   Email is base64-encoded so it isn't sitting as plaintext
+   in the shipped source for scrapers to grab; it's decoded
+   at runtime before use. */
 const PERSONAL = {
-  email:    'uday.v3669@gmail.com',
+  emailEncoded: 'dWRheS52MzY2OUBnbWFpbC5jb20=',
   linkedin: 'https://linkedin.com/in/udayv59',
   github:   'https://github.com/Uday-Varik',
   resume:   'MyResumes/Uday_Varikuppala_Data_Scientist_Resume.pdf'
 };
+PERSONAL.email = atob(PERSONAL.emailEncoded);
 
 function bindPersonalDetails() {
   document.querySelectorAll('[data-bind]').forEach(function (el) {
@@ -575,7 +579,7 @@ document.addEventListener('DOMContentLoaded', function () {
         submitBtn.disabled    = false;
         submitBtn.textContent = 'Send Message';
         var se = document.getElementById('formSubmitError');
-        if (se) se.textContent = 'Something went wrong. Please email uday.v3669@gmail.com directly.';
+        if (se) se.textContent = 'Something went wrong. Please email ' + PERSONAL.email + ' directly.';
       }
     });
   }
