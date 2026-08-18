@@ -4,7 +4,30 @@
    scroll reveals, counter, contact form
    ══════════════════════════════════════════════════════ */
 
+/* ─── PERSONAL DETAILS ─────────────────────────────────
+   Single source of truth for contact links. Nothing below
+   is hardcoded in index.html — every data-bind target gets
+   its href (and, where flagged, its visible text) from here. */
+const PERSONAL = {
+  email:    'uday.v3669@gmail.com',
+  linkedin: 'https://linkedin.com/in/udayv59',
+  github:   'https://github.com/Uday-Varik',
+  resume:   'MyResumes/Uday_Varikuppala_Data_Scientist_Resume.pdf'
+};
+
+function bindPersonalDetails() {
+  document.querySelectorAll('[data-bind]').forEach(function (el) {
+    var key = el.dataset.bind;
+    var value = PERSONAL[key];
+    if (!value) return;
+    el.href = key === 'email' ? 'mailto:' + value : value;
+    if (el.dataset.bindText === 'true') el.textContent = value;
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+
+  bindPersonalDetails();
 
   const gsapOK = typeof gsap !== 'undefined';
   const stOK   = gsapOK && typeof ScrollTrigger !== 'undefined';
