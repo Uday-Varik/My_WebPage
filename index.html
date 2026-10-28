@@ -3,591 +3,210 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Uday Varikuppala, Data Scientist</title>
-  <meta name="description" content="Data Scientist with 5+ years building and deploying ML models in logistics, fintech, and healthcare. Currently at FedEx working on demand forecasting, NLP/LLM applications, and ML pipelines on AWS." />
-  <link rel="preconnect" href="https://fonts.bunny.net" />
-  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:300,400,500,600,700,800,900&display=swap" />
+  <title>Uday Varikuppala — Production Data Scientist</title>
+  <meta name="description" content="Uday Varikuppala is a data scientist with 5+ years building and deploying ML models in logistics, fintech, and healthcare. Currently at FedEx, working on demand forecasting, NLP/LLM systems, and ML pipelines on AWS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&display=swap" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050507'/%3E%3Ctext x='16' y='22' font-family='system-ui%2Csans-serif' font-weight='900' font-size='15' fill='%2300E5FF' text-anchor='middle'%3EUV%3C/text%3E%3C/svg%3E" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Uday Varikuppala, Data Scientist" />
-  <meta property="og:description" content="Data Scientist with 5+ years building and deploying ML models in logistics, fintech, and healthcare. Currently at FedEx working on demand forecasting, NLP/LLM applications, and ML pipelines on AWS." />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Uday Varikuppala, Data Scientist" />
-  <meta name="twitter:description" content="Data Scientist with 5+ years building and deploying ML models in logistics, fintech, and healthcare. Currently at FedEx working on demand forecasting, NLP/LLM applications, and ML pipelines on AWS." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23161513'/%3E%3Ctext x='16' y='21' font-family='Georgia,serif' font-size='13' fill='%23F3EFE6' text-anchor='middle'%3EU V%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
+  <a href="#main" class="skip">Skip to content</a>
 
-  <a href="#main-content" class="skip-link">Skip to content</a>
+  <header class="masthead">
+    <a href="#" class="masthead-name">Uday Varikuppala</a>
+    <p class="masthead-role">Production Data Scientist</p>
+    <p class="masthead-place">Memphis, Tennessee · Available for new opportunities</p>
+    <nav class="masthead-nav" aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#practice">Practice</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <!-- Custom cursor -->
-  <div class="cursor-dot"  id="cursorDot"  aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
-
-  <!-- ═══ NAV ═══ -->
-  <nav id="nav">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">UV<span class="nav-logo-dot">.</span></a>
-      <div class="nav-links" id="navLinks">
-        <a href="#about"      class="nav-link">About</a>
-        <a href="#skills"     class="nav-link">Skills</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#projects"   class="nav-link">Projects</a>
-        <a href="#education"  class="nav-link">Education</a>
-        <a href="#contact"    class="nav-link">Contact</a>
-        <a href="#contact"    class="nav-link nav-mobile-cta">Hire Me</a>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="kicker">A portfolio, in one sentence</p>
+      <h1>Models that <em>hold up</em><br />in production.</h1>
+      <div class="hero-sub">
+        <p>Five years building and deploying machine learning across logistics, fintech, and healthcare — forecasting demand, routing language, and keeping systems honest after the demo, when the data drifts.</p>
+        <p class="hero-links">
+          <a href="#work">Read the work ↓</a>
+          <a href="#" data-bind="resume" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+        </p>
       </div>
-      <div class="nav-right">
-        <a href="#contact" class="nav-cta mag">Hire Me</a>
-        <button id="hamburger" class="hamburger" aria-label="Toggle menu" aria-expanded="false">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
-  </nav>
+      <figure class="hero-figure reveal">
+        <img src="assets/hero-terrain.webp" alt="Abstract ink drawing of layered terrain on warm paper, with a single thin bronze line rising across it" width="1600" height="1067" />
+        <figcaption><span>Fig. 01</span> Demand, rendered as terrain. An illustrative drawing — not client data. The bronze line is the forecast; the terrain is everything it has to survive.</figcaption>
+      </figure>
+      <dl class="hero-facts">
+        <div><dt>Years in production ML</dt><dd>5+</dd></div>
+        <div><dt>Daily predictions, delay-risk scoring</dt><dd>50K+</dd></div>
+        <div><dt>Latency</dt><dd>Sub-60ms</dd></div>
+        <div><dt>Forecast accuracy gain, FedEx</dt><dd>+31%</dd></div>
+      </dl>
+    </section>
 
-  <main id="main-content">
+    <!-- INDEX -->
+    <nav class="index" aria-label="Contents">
+      <p class="section-label">Contents</p>
+      <ol>
+        <li><a href="#work"><span>01</span> Selected work <i>Three systems, and what they changed</i></a></li>
+        <li><a href="#experience"><span>02</span> Experience <i>FedEx · Caliber Home Loans · Novartis</i></a></li>
+        <li><a href="#practice"><span>03</span> Practice <i>How the work is done, and with what</i></a></li>
+        <li><a href="#education"><span>04</span> Education &amp; certifications</a></li>
+        <li><a href="#contact"><span>05</span> Contact</a></li>
+      </ol>
+    </nav>
 
-    <!-- ═══ HERO ═══ -->
-    <section class="hero" id="hero">
-      <canvas id="hero-canvas" aria-hidden="true"></canvas>
-      <div class="orb orb-1" aria-hidden="true"></div>
-      <div class="orb orb-2" aria-hidden="true"></div>
-      <div class="orb orb-3" aria-hidden="true"></div>
+    <!-- WORK -->
+    <section class="section" id="work">
+      <p class="section-label">01 — Selected work</p>
+      <h2 class="section-title">Three systems,<br />and what they changed.</h2>
 
-      <div class="container hero-layout">
-
-        <div class="hero-left">
-          <div class="hero-tag">
-            <span class="hero-tag-dot"></span>
-            Available for new opportunities
-          </div>
-
-          <div class="hero-title-wrap">
-            <h1 class="hero-title">
-              <span class="hero-line hero-line-1">Uday</span>
-              <span class="hero-line hero-line-2">Varikuppala</span>
-            </h1>
-          </div>
-
-          <p class="hero-role">Data Scientist · ML, NLP &amp; MLOps</p>
-
-          <p class="hero-desc">
-            5+ years building and deploying ML models across logistics, fintech,
-            and healthcare. The kind that stay running after the demo.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#contact"    class="btn btn-primary mag">Get In Touch</a>
-            <a href="#projects"   class="btn btn-ghost mag">View Work</a>
-          </div>
-
-          <div class="hero-links">
-            <a href="#" class="hero-link" data-bind="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-            <a href="#" class="hero-link" data-bind="github" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            <a href="#" class="hero-link" data-bind="email">Email ↗</a>
-            <a href="#" class="hero-link" id="resumeLink" data-bind="resume" target="_blank" rel="noopener noreferrer">Resume ↗</a>
-          </div>
+      <article class="case reveal">
+        <div class="case-meta"><span>Case 01</span><p class="case-metric">50K+<br /><small>daily predictions<br />at sub-60ms latency</small></p></div>
+        <div class="case-body">
+          <h3>Real-time delivery-delay risk scoring</h3>
+          <p class="case-dek">Dispatch did not need another end-of-day report. It needed a live signal, in time to reroute.</p>
+          <p>A real-time scoring service on AWS Lambda and SageMaker endpoints, serving delay-risk predictions consumed directly by dispatch tooling — 50K+ predictions a day, powering live rerouting decisions.</p>
+          <figure class="chart" aria-label="Illustrative chart showing a rising prediction volume line">
+            <svg viewBox="0 0 600 180" role="img"><path d="M20 150 C 120 140, 180 120, 260 105 S 420 70, 580 28" fill="none" stroke="#161513" stroke-width="1.5" /><path d="M20 165 C 120 155, 220 145, 320 130 S 480 95, 580 60" fill="none" stroke="#8A6D3B" stroke-width="1" stroke-dasharray="4 5" /><text x="20" y="172" font-size="10" fill="#6B675E">Illustrative · volume, rising left to right</text><text x="430" y="20" font-size="10" fill="#6B675E">Forecast line</text></svg>
+            <figcaption>Problem → live scoring → rerouting, not reporting.</figcaption>
+          </figure>
+          <p class="tags">AWS Lambda · SageMaker · Real-time inference</p>
         </div>
+      </article>
 
-        <div class="hero-right">
-          <div class="stats-card">
-            <div class="stat-item">
-              <span class="stat-val" data-count="5" data-suffix="+">5+</span>
-              <span class="stat-key">Years Experience</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-val" data-count="50" data-suffix="K+">50K+</span>
-              <span class="stat-key">Daily Predictions Served</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-              <span class="stat-val" data-count="3">3</span>
-              <span class="stat-key">Industries</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-chips">
-              <span>LangChain</span><span>RAG</span><span>XGBoost</span>
-              <span>PyTorch</span><span>SageMaker</span><span>SHAP</span>
-              <span>Snowflake</span><span>Power BI</span>
-            </div>
-          </div>
+      <article class="case reveal">
+        <div class="case-meta"><span>Case 02</span><p class="case-metric">BERT + RAG<br /><small>classification<br />&amp; routing</small></p></div>
+        <div class="case-body">
+          <h3>Complaint classification &amp; RAG routing</h3>
+          <p class="case-dek">Complaints were reaching the wrong team, slowly and inconsistently.</p>
+          <p>A fine-tuned BERT classifier paired with a LangChain RAG pipeline over internal knowledge bases classifies and routes complaints automatically — connecting each case directly to the right knowledge and the right team, and reducing escalation handling time.</p>
+          <p class="flow">Complaint &nbsp;→&nbsp; BERT &nbsp;→&nbsp; Internal knowledge &nbsp;→&nbsp; The right team</p>
+          <p class="tags">BERT · LangChain · RAG · NLP</p>
         </div>
+      </article>
 
+      <article class="case reveal">
+        <div class="case-meta"><span>Case 03</span><p class="case-metric">~20%<br /><small>model performance<br />improvement</small></p></div>
+        <div class="case-body">
+          <h3>Patient no-show prediction</h3>
+          <p class="case-dek">Clinics were losing capacity because scheduling ignored behaviour — and weather.</p>
+          <p>XGBoost and logistic regression models on behavioural, demographic, and geospatial data, with engineered temporal and weather features, improved performance by ~20%. Deployed as a real-time scoring API (10K+ daily predictions) with SHAP-based explanations that clinical operations actually used to change scheduling.</p>
+          <p class="tags">XGBoost · Logistic regression · SHAP · Geospatial ML</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <p class="section-label">02 — Experience</p>
+      <h2 class="section-title">Where the work<br />was done.</h2>
+
+      <article class="job reveal">
+        <div class="job-head"><p class="job-dates">Jun 2024 — Present</p><h3><a href="https://www.fedex.com" target="_blank" rel="noopener noreferrer">FedEx Corporation</a></h3><p>Data Scientist / ML Engineer · Memphis, TN</p></div>
+        <ul class="outcomes">
+          <li>Package demand forecasting (XGBoost, LightGBM, Prophet) on AWS SageMaker — volume prediction accuracy up 31% over the prior baseline, supporting hub capacity planning.</li>
+          <li>Complaint classification and routing with a fine-tuned BERT model and a LangChain RAG pipeline over internal knowledge bases.</li>
+          <li>Automated retraining and versioning with SageMaker Pipelines and AWS Feature Store, triggered by drift signals from Evidently AI.</li>
+          <li>Real-time delivery-delay risk scores via AWS Lambda and SageMaker endpoints — 50K+ daily predictions at sub-60ms latency, consumed by dispatch for rerouting.</li>
+          <li>A/B tests and uplift analyses for customer self-service features, informing rollout decisions.</li>
+          <li>Tableau and Power BI dashboards for model and delivery KPIs — ~$18K/year in AWS cost savings identified.</li>
+        </ul>
+        <p class="tags">XGBoost · LightGBM · Prophet · LangChain · RAG · BERT · SageMaker · Evidently AI</p>
+      </article>
+
+      <article class="job reveal">
+        <div class="job-head"><p class="job-dates">May 2021 — Jul 2023</p><h3><a href="https://caliberhomeloans.com" target="_blank" rel="noopener noreferrer">Caliber Home Loans</a></h3><p>Data Scientist, Analytics &amp; Risk Modeling · India, remote for US mortgage operations</p></div>
+        <ul class="outcomes">
+          <li>Prepayment-risk and delinquency models (XGBoost, survival analysis) on behavioural and macroeconomic features for lending and servicing decisions.</li>
+          <li>ETL/ELT pipelines in Snowflake consolidating origination, servicing, and underwriting data for modeling and regulatory reporting.</li>
+          <li>Automated amortization modeling and loan-schedule generation in Python, substantially reducing manual errors and processing time.</li>
+          <li>Great Expectations data-quality checks for ML training and reporting datasets; Snowflake query and warehouse optimisation saving ~$50K annually.</li>
+          <li>Power BI dashboards with delinquency, repayment, and refinancing KPIs for senior stakeholders.</li>
+        </ul>
+        <p class="tags">XGBoost · Survival analysis · Snowflake · Great Expectations · Power BI</p>
+      </article>
+
+      <article class="job reveal">
+        <div class="job-head"><p class="job-dates">Jan 2020 — Apr 2021</p><h3><a href="https://novartis.com" target="_blank" rel="noopener noreferrer">Novartis</a></h3><p>Data Scientist, Healthcare Analytics · India</p></div>
+        <ul class="outcomes">
+          <li>Patient no-show prediction (XGBoost, logistic regression) on behavioural, demographic, and geospatial data; temporal and weather features improved performance by ~20%.</li>
+          <li>Real-time scoring API (10K+ daily predictions) with SHAP-based explanations to support scheduling decisions.</li>
+          <li>Work with clinical operations to turn model outputs into scheduling changes and better capacity utilisation.</li>
+        </ul>
+        <p class="tags">XGBoost · Logistic regression · SHAP · Geospatial ML · Real-time inference</p>
+      </article>
+    </section>
+
+    <!-- PRACTICE -->
+    <section class="section" id="practice">
+      <p class="section-label">03 — Practice</p>
+      <h2 class="section-title">How the work<br />is done.</h2>
+      <p class="lede">Most of the work sits in the gap between a model that looks good in a notebook and one that holds up in production: feature engineering, deployment, monitoring, and retraining when the data drifts. Python, XGBoost, and PyTorch are day-to-day.</p>
+      <div class="practice-grid">
+        <div class="reveal"><h3>NLP &amp; LLM systems</h3><p>LangChain RAG pipelines over internal knowledge bases and fine-tuned BERT models for classification and routing.</p></div>
+        <div class="reveal"><h3>Forecasting &amp; risk</h3><p>XGBoost, LightGBM, and Prophet for demand forecasting, plus survival analysis for prepayment and delinquency risk.</p></div>
+        <div class="reveal"><h3>MLOps &amp; production</h3><p>SageMaker Pipelines, Feature Store, and Evidently AI drift monitoring. Keeping models working the day after launch.</p></div>
       </div>
-
-      <div class="hero-scroll-hint" aria-hidden="true">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
+      <div class="stack reveal">
+        <p><strong>Generative AI &amp; NLP</strong> — RAG · LangChain · Hugging Face Transformers · Fine-tuned BERT · NLP / LLM applications</p>
+        <p><strong>ML &amp; data science</strong> — XGBoost / LightGBM · TensorFlow / PyTorch · Scikit-learn · Prophet · Survival analysis · Logistic regression · Feature engineering</p>
+        <p><strong>Languages &amp; data</strong> — Python · Pandas / NumPy · SQL · R · Snowflake · PostgreSQL · Kafka · dbt</p>
+        <p><strong>MLOps &amp; cloud</strong> — AWS SageMaker · AWS Glue / Lambda / S3 · MLflow · Airflow · Docker · GitHub Actions · Evidently AI</p>
+        <p><strong>Explainability &amp; experimentation</strong> — SHAP · A/B testing · Causal inference · Uplift analysis · Great Expectations</p>
+        <p><strong>Visualisation &amp; BI</strong> — Power BI · Tableau · Dashboarding</p>
       </div>
     </section>
 
-    <!-- ═══ MARQUEE ═══ -->
-    <div class="marquee-wrap" aria-hidden="true">
-      <div class="marquee-inner">
-        <div class="marquee-group">
-          <span>Demand Forecasting</span><span class="sep">·</span>
-          <span>NLP / LLM Applications</span><span class="sep">·</span>
-          <span>RAG</span><span class="sep">·</span>
-          <span>LangChain</span><span class="sep">·</span>
-          <span>AWS SageMaker</span><span class="sep">·</span>
-          <span>PyTorch</span><span class="sep">·</span>
-          <span>XGBoost</span><span class="sep">·</span>
-          <span>SHAP</span><span class="sep">·</span>
-          <span>Snowflake</span><span class="sep">·</span>
-          <span>MLflow</span><span class="sep">·</span>
-          <span>Apache Kafka</span><span class="sep">·</span>
-          <span>Hugging Face</span><span class="sep">·</span>
-          <span>Great Expectations</span><span class="sep">·</span>
-          <span>Docker</span><span class="sep">·</span>
-          <span>GitHub Actions</span><span class="sep">·</span>
-        </div>
-        <!-- duplicate for seamless loop -->
-        <div class="marquee-group" aria-hidden="true">
-          <span>Demand Forecasting</span><span class="sep">·</span>
-          <span>NLP / LLM Applications</span><span class="sep">·</span>
-          <span>RAG</span><span class="sep">·</span>
-          <span>LangChain</span><span class="sep">·</span>
-          <span>AWS SageMaker</span><span class="sep">·</span>
-          <span>PyTorch</span><span class="sep">·</span>
-          <span>XGBoost</span><span class="sep">·</span>
-          <span>SHAP</span><span class="sep">·</span>
-          <span>Snowflake</span><span class="sep">·</span>
-          <span>MLflow</span><span class="sep">·</span>
-          <span>Apache Kafka</span><span class="sep">·</span>
-          <span>Hugging Face</span><span class="sep">·</span>
-          <span>Great Expectations</span><span class="sep">·</span>
-          <span>Docker</span><span class="sep">·</span>
-          <span>GitHub Actions</span><span class="sep">·</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ═══ ABOUT ═══ -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-label">
-          <span class="section-num">01</span>
-          <span class="section-tag">Background</span>
-        </div>
-        <h2 class="section-title reveal-title">About<br><em>Me</em></h2>
-
-        <div class="about-grid">
-          <div class="about-copy">
-            <p>
-              5+ years building and deploying machine learning models across logistics,
-              fintech, and healthcare. Most of that work sits in the gap between a model
-              that looks good in a notebook and one that holds up in production: feature
-              engineering, deployment, monitoring, and retraining when the data drifts.
-            </p>
-            <p>
-              Python, XGBoost, and PyTorch are day-to-day. Currently at FedEx building
-              demand forecasting models and NLP/LLM systems, including a RAG pipeline over
-              internal knowledge bases and a fine-tuned BERT classifier for complaint routing.
-            </p>
-          </div>
-
-          <div class="about-features">
-            <div class="feature-card reveal-card">
-              <div class="fc-num">01</div>
-              <div class="fc-body">
-                <h3 class="fc-title">NLP &amp; LLM Systems</h3>
-                <p class="fc-desc">LangChain RAG pipelines over internal knowledge bases and fine-tuned BERT models for classification and routing.</p>
-              </div>
-            </div>
-            <div class="feature-card reveal-card">
-              <div class="fc-num">02</div>
-              <div class="fc-body">
-                <h3 class="fc-title">Forecasting &amp; Risk Modeling</h3>
-                <p class="fc-desc">XGBoost, LightGBM, and Prophet for demand forecasting, plus survival analysis for prepayment and delinquency risk.</p>
-              </div>
-            </div>
-            <div class="feature-card reveal-card">
-              <div class="fc-num">03</div>
-              <div class="fc-body">
-                <h3 class="fc-title">MLOps &amp; Production</h3>
-                <p class="fc-desc">SageMaker Pipelines, Feature Store, and Evidently AI drift monitoring. Keeping models working the day after launch.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- EDUCATION -->
+    <section class="section" id="education">
+      <p class="section-label">04 — Education &amp; certifications</p>
+      <h2 class="section-title">Credentials.</h2>
+      <div class="edu">
+        <div class="reveal"><h3>Master of Science in Data Science</h3><p>University of Memphis · Aug 2023 — May 2025</p><p class="muted">Machine Learning · Deep Learning · NLP · Statistical Modeling · Data Engineering · MLOps</p></div>
+        <div class="reveal"><h3>Certifications</h3><ul><li>Microsoft Certified: Power BI Data Analyst Associate</li><li>Mathematics for Machine Learning &amp; Data Science, DeepLearning.AI</li></ul></div>
       </div>
     </section>
 
-    <!-- ═══ SKILLS ═══ -->
-    <section id="skills" class="section section-alt">
-      <div class="container">
-        <div class="section-label">
-          <span class="section-num">02</span>
-          <span class="section-tag">Capabilities</span>
-        </div>
-        <h2 class="section-title reveal-title">Technical<br><em>Skills</em></h2>
-
-        <div class="skills-grid">
-
-          <div class="skill-card reveal-card">
-            <div class="sk-header">
-              <span class="sk-num">01</span>
-              <h3 class="sk-name">Generative AI &amp; NLP</h3>
-            </div>
-            <div class="sk-tags">
-              <span>RAG</span><span>LangChain</span>
-              <span>Hugging Face Transformers</span><span>Fine-Tuned BERT</span>
-              <span>NLP / LLM Applications</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal-card">
-            <div class="sk-header">
-              <span class="sk-num">02</span>
-              <h3 class="sk-name">ML &amp; Data Science</h3>
-            </div>
-            <div class="sk-tags">
-              <span>XGBoost / LightGBM</span><span>TensorFlow / PyTorch</span>
-              <span>Scikit-learn</span><span>Prophet</span>
-              <span>Survival Analysis</span><span>Logistic Regression</span>
-              <span>Feature Engineering</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal-card">
-            <div class="sk-header">
-              <span class="sk-num">03</span>
-              <h3 class="sk-name">Languages &amp; Data</h3>
-            </div>
-            <div class="sk-tags">
-              <span>Python</span><span>Pandas / NumPy</span>
-              <span>SQL</span><span>R</span>
-              <span>Snowflake</span><span>PostgreSQL</span>
-              <span>Kafka</span><span>dbt</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal-card">
-            <div class="sk-header">
-              <span class="sk-num">04</span>
-              <h3 class="sk-name">MLOps &amp; Cloud</h3>
-            </div>
-            <div class="sk-tags">
-              <span>AWS SageMaker</span><span>AWS Glue / Lambda / S3</span>
-              <span>MLflow</span><span>Airflow</span>
-              <span>Docker</span><span>GitHub Actions</span>
-              <span>Evidently AI</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal-card">
-            <div class="sk-header">
-              <span class="sk-num">05</span>
-              <h3 class="sk-name">Explainability &amp; Experimentation</h3>
-            </div>
-            <div class="sk-tags">
-              <span>SHAP</span><span>A/B Testing</span>
-              <span>Causal Inference</span><span>Uplift Analysis</span>
-              <span>Great Expectations</span>
-            </div>
-          </div>
-
-          <div class="skill-card reveal-card">
-            <div class="sk-header">
-              <span class="sk-num">06</span>
-              <h3 class="sk-name">Visualization &amp; BI</h3>
-            </div>
-            <div class="sk-tags">
-              <span>Power BI</span><span>Tableau</span><span>Dashboarding</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <p class="section-label">05 — Contact</p>
+      <h2 class="section-title">Let’s talk.</h2>
+      <p class="lede">Open to Data Scientist and ML Engineer roles, technical consulting, and research work — particularly where forecasting and LLM systems meet production constraints. If you’re working on forecasting, NLP, or ML systems in production and want a second opinion, reach out.</p>
+      <p class="contact-links">
+        <a href="#" data-bind="email" data-bind-text="true">Email</a><br />
+        <a href="#" data-bind="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a> &nbsp;·&nbsp;
+        <a href="#" data-bind="github" target="_blank" rel="noopener noreferrer">GitHub ↗</a> &nbsp;·&nbsp;
+        <a href="#" data-bind="resume" target="_blank" rel="noopener noreferrer">Résumé ↗</a>
+      </p>
+      <form id="contactForm" class="contact-form" novalidate>
+        <p class="form-note">Or write here — it opens a pre-filled email. No message is silently “sent” by this page.</p>
+        <p class="form-success" id="formSuccess" role="alert">Your email app should now be open with the message ready to send.</p>
+        <label>Name<input type="text" id="contactName" placeholder="Your name" required /></label>
+        <span class="field-error" id="nameError" role="alert"></span>
+        <label>Email<input type="email" id="contactEmail" placeholder="you@example.com" required /></label>
+        <span class="field-error" id="emailError" role="alert"></span>
+        <label>Message<textarea id="contactMessage" placeholder="What are you building?" maxlength="500" required></textarea></label>
+        <span class="char-count" id="charCounter">0 / 500</span>
+        <span class="field-error" id="msgError" role="alert"></span>
+        <p class="form-submit-error" id="formSubmitError" role="alert"></p>
+        <button type="submit" id="submitBtn">Send message →</button>
+      </form>
     </section>
-
-    <!-- ═══ EXPERIENCE ═══ -->
-    <section id="experience" class="section">
-      <div class="container">
-        <div class="section-label">
-          <span class="section-num">03</span>
-          <span class="section-tag">Career</span>
-        </div>
-        <h2 class="section-title reveal-title">Work<br><em>Experience</em></h2>
-
-        <div class="exp-list">
-
-          <article class="exp-card reveal-card">
-            <div class="exp-head">
-              <div class="exp-info">
-                <h3 class="exp-co"><a href="https://www.fedex.com" target="_blank" rel="noopener noreferrer" class="exp-co-link">FedEx Corporation</a></h3>
-                <p class="exp-loc">Memphis, TN</p>
-              </div>
-              <div class="exp-meta">
-                <span class="exp-role">Data Scientist / ML Engineer</span>
-                <span class="exp-date">Jun 2024 – Present <span class="current-badge">Current</span></span>
-              </div>
-            </div>
-            <ul class="exp-bullets" role="list">
-              <li>Built package demand forecasting models (XGBoost, LightGBM, Prophet) on AWS SageMaker, improving volume prediction accuracy by 31% over the prior baseline and supporting hub capacity planning.</li>
-              <li>Developed a customer complaint classification and routing system using a fine-tuned BERT model and a LangChain RAG pipeline over internal knowledge bases, reducing escalation handling time.</li>
-              <li>Automated model retraining and versioning with SageMaker Pipelines and AWS Feature Store, using drift signals from Evidently AI to trigger retraining.</li>
-              <li>Served real-time delivery-delay risk scores via AWS Lambda and SageMaker endpoints (50K+ daily predictions at sub-60ms latency), consumed by dispatch operations for rerouting decisions.</li>
-              <li>Designed A/B tests and uplift analyses to evaluate customer self-service features; results informed rollout decisions.</li>
-              <li>Built Tableau and Power BI dashboards tracking model and delivery KPIs for operations and leadership; identified ~$18K/year in AWS cost savings.</li>
-            </ul>
-            <div class="exp-chips">
-              <span>XGBoost</span><span>LightGBM</span><span>Prophet</span>
-              <span>LangChain</span><span>RAG</span><span>BERT</span><span>SageMaker</span><span>Evidently AI</span>
-            </div>
-          </article>
-
-          <article class="exp-card reveal-card">
-            <div class="exp-head">
-              <div class="exp-info">
-                <h3 class="exp-co"><a href="https://caliberhomeloans.com" target="_blank" rel="noopener noreferrer" class="exp-co-link">Caliber Home Loans</a></h3>
-                <p class="exp-loc">India (remote support for US mortgage operations)</p>
-              </div>
-              <div class="exp-meta">
-                <span class="exp-role">Data Scientist, Analytics &amp; Risk Modeling</span>
-                <span class="exp-date">May 2021 – Jul 2023</span>
-              </div>
-            </div>
-            <ul class="exp-bullets" role="list">
-              <li>Built prepayment-risk and delinquency models using XGBoost and survival analysis on behavioral and macroeconomic features to support lending and servicing decisions.</li>
-              <li>Developed ETL/ELT pipelines in Snowflake consolidating origination, servicing, and underwriting data for modeling and regulatory reporting.</li>
-              <li>Automated amortization modeling and loan-schedule generation in Python, substantially reducing manual errors and processing time.</li>
-              <li>Implemented Great Expectations data-quality checks for ML training and reporting datasets; optimized Snowflake queries and warehouse configuration, saving ~$50K annually.</li>
-              <li>Delivered Power BI dashboards with delinquency, repayment, and refinancing KPIs used by senior stakeholders.</li>
-            </ul>
-            <div class="exp-chips">
-              <span>XGBoost</span><span>Survival Analysis</span><span>Snowflake</span>
-              <span>Great Expectations</span><span>Power BI</span>
-            </div>
-          </article>
-
-          <article class="exp-card reveal-card">
-            <div class="exp-head">
-              <div class="exp-info">
-                <h3 class="exp-co"><a href="https://novartis.com" target="_blank" rel="noopener noreferrer" class="exp-co-link">Novartis</a></h3>
-                <p class="exp-loc">India</p>
-              </div>
-              <div class="exp-meta">
-                <span class="exp-role">Data Scientist, Healthcare Analytics</span>
-                <span class="exp-date">Jan 2020 – Apr 2021</span>
-              </div>
-            </div>
-            <ul class="exp-bullets" role="list">
-              <li>Built patient no-show prediction models (XGBoost, logistic regression) using behavioral, demographic, and geospatial data; engineered temporal and weather features that improved model performance by ~20%.</li>
-              <li>Deployed a real-time scoring API (10K+ daily predictions) with SHAP-based explanations to support scheduling decisions.</li>
-              <li>Partnered with clinical operations teams to turn model outputs into scheduling changes and better capacity utilization.</li>
-            </ul>
-            <div class="exp-chips">
-              <span>XGBoost</span><span>Logistic Regression</span><span>SHAP</span>
-              <span>Geospatial ML</span><span>Real-Time Inference</span>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ PROJECTS ═══ -->
-    <section id="projects" class="section section-alt">
-      <div class="container">
-        <div class="section-label">
-          <span class="section-num">04</span>
-          <span class="section-tag">Case Studies</span>
-        </div>
-        <h2 class="section-title reveal-title">Featured<br><em>Projects</em></h2>
-
-        <div class="projects-grid">
-
-          <article class="project-card reveal-card">
-            <div class="proj-number">01</div>
-            <h3 class="proj-title">Real-Time Delivery-Delay Risk Scoring</h3>
-            <div class="proj-impact-line">
-              <span class="impact-num">50K+</span>
-              <span class="impact-lbl">Daily Predictions at Sub-60ms Latency</span>
-            </div>
-            <div class="proj-sections">
-              <div class="proj-block">
-                <span class="proj-label">Problem</span>
-                <p>Dispatch operations needed live delay signals to make rerouting decisions, not end-of-day reports.</p>
-              </div>
-              <div class="proj-block">
-                <span class="proj-label">Solution</span>
-                <p>A real-time scoring service on AWS Lambda and SageMaker endpoints, serving delay-risk predictions consumed directly by dispatch tooling.</p>
-              </div>
-              <div class="proj-block">
-                <span class="proj-label">Impact</span>
-                <p class="proj-highlight">50K+ daily predictions at sub-60ms latency, powering live rerouting decisions.</p>
-              </div>
-            </div>
-            <div class="proj-tags">
-              <span>AWS Lambda</span><span>SageMaker</span><span>Real-Time Inference</span>
-            </div>
-          </article>
-
-          <article class="project-card reveal-card">
-            <div class="proj-number">02</div>
-            <h3 class="proj-title">Complaint Classification &amp; RAG Routing</h3>
-            <div class="proj-impact-line">
-              <span class="impact-num">BERT</span>
-              <span class="impact-lbl">+ LangChain RAG Pipeline</span>
-            </div>
-            <div class="proj-sections">
-              <div class="proj-block">
-                <span class="proj-label">Problem</span>
-                <p>Customer complaints needed to reach the right team quickly, but manual routing was slow and inconsistent.</p>
-              </div>
-              <div class="proj-block">
-                <span class="proj-label">Solution</span>
-                <p>A fine-tuned BERT classifier paired with a LangChain RAG pipeline over internal knowledge bases to classify and route complaints automatically.</p>
-              </div>
-              <div class="proj-block">
-                <span class="proj-label">Impact</span>
-                <p class="proj-highlight">Reduced escalation handling time by connecting classification directly to the right internal knowledge and team.</p>
-              </div>
-            </div>
-            <div class="proj-tags">
-              <span>BERT</span><span>LangChain</span><span>RAG</span><span>NLP</span>
-            </div>
-          </article>
-
-          <article class="project-card reveal-card">
-            <div class="proj-number">03</div>
-            <h3 class="proj-title">Patient No-Show Prediction</h3>
-            <div class="proj-impact-line">
-              <span class="impact-num">~20%</span>
-              <span class="impact-lbl">Model Performance Improvement</span>
-            </div>
-            <div class="proj-sections">
-              <div class="proj-block">
-                <span class="proj-label">Problem</span>
-                <p>High no-show rates were hurting clinic capacity utilization, and scheduling didn't account for behavioral or environmental signals.</p>
-              </div>
-              <div class="proj-block">
-                <span class="proj-label">Solution</span>
-                <p>XGBoost and logistic regression models using behavioral, demographic, and geospatial data, with engineered temporal and weather features.</p>
-              </div>
-              <div class="proj-block">
-                <span class="proj-label">Impact</span>
-                <p class="proj-highlight">~20% improvement in model performance; deployed as a real-time scoring API (10K+ daily predictions) with SHAP-based explanations used by clinical operations.</p>
-              </div>
-            </div>
-            <div class="proj-tags">
-              <span>XGBoost</span><span>Logistic Regression</span><span>SHAP</span><span>Geospatial ML</span>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ EDUCATION ═══ -->
-    <section id="education" class="section">
-      <div class="container">
-        <div class="section-label">
-          <span class="section-num">05</span>
-          <span class="section-tag">Credentials</span>
-        </div>
-        <h2 class="section-title reveal-title">Education &amp;<br><em>Certifications</em></h2>
-
-        <div class="edu-grid">
-
-          <div class="edu-card reveal-card">
-            <div class="edu-top">
-              <span class="edu-icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 4L2 9L12 14L22 9L12 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M7 12V17C9 19 15 19 17 17V12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="22" y1="9" x2="22" y2="14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></span>
-              <h3 class="edu-degree">Master of Science in Data Science</h3>
-            </div>
-            <p class="edu-school">University of Memphis</p>
-            <p class="edu-detail">Aug 2023 – May 2025</p>
-            <p class="edu-courses">Machine Learning · Deep Learning · NLP · Statistical Modeling · Data Engineering · MLOps</p>
-          </div>
-
-          <div class="edu-card reveal-card">
-            <div class="edu-top">
-              <span class="edu-icon-svg" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 8H16M8 12H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M10 16V21L12 19.5L14 21V16" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
-              <h3 class="edu-degree">Certifications</h3>
-            </div>
-            <ul class="cert-list" role="list">
-              <li>Microsoft Certified: Power BI Data Analyst Associate</li>
-              <li>Mathematics for Machine Learning &amp; Data Science, DeepLearning.AI</li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ═══ CONTACT ═══ -->
-    <section id="contact" class="section section-alt">
-      <div class="container">
-        <div class="section-label">
-          <span class="section-num">06</span>
-          <span class="section-tag">Let's Talk</span>
-        </div>
-        <h2 class="section-title reveal-title">Get In<br><em>Touch</em></h2>
-        <p class="contact-sub">Open to Data Scientist and ML Engineer roles, technical consulting, and research work. Particularly where forecasting and LLM systems meet production constraints.</p>
-
-        <div class="contact-grid">
-
-          <div class="contact-left">
-            <p class="contact-intro">
-              If you're working on forecasting, NLP, or ML systems in production and want a second
-              opinion, reach out.
-            </p>
-            <a href="#" class="contact-email-link" data-bind="email" data-bind-text="true"></a>
-            <p class="contact-note">
-              Your email address is only used to reply to you. No spam, no third-party sharing.
-            </p>
-          </div>
-
-          <div class="contact-form-box">
-            <div class="form-success" id="formSuccess" role="alert">
-              ✓ Message sent. I'll get back to you soon.
-            </div>
-            <form id="contactForm" novalidate>
-              <div class="form-row">
-                <label for="contactName">Name <span class="req-star" aria-hidden="true">*</span></label>
-                <input type="text" id="contactName" name="name" placeholder="Your name" required aria-describedby="nameError" />
-                <span class="field-error" id="nameError" role="alert" aria-live="polite"></span>
-              </div>
-              <div class="form-row">
-                <label for="contactEmail">Email <span class="req-star" aria-hidden="true">*</span></label>
-                <input type="email" id="contactEmail" name="email" placeholder="you@example.com" required aria-describedby="emailError" />
-                <span class="field-error" id="emailError" role="alert" aria-live="polite"></span>
-              </div>
-              <div class="form-row form-row-msg">
-                <label for="contactMessage">Message <span class="req-star" aria-hidden="true">*</span></label>
-                <textarea id="contactMessage" name="message" placeholder="What's on your mind?" maxlength="500" required aria-describedby="msgError"></textarea>
-                <span class="char-count" id="charCounter">0 / 500</span>
-                <span class="field-error" id="msgError" role="alert" aria-live="polite"></span>
-              </div>
-              <p class="form-submit-error" id="formSubmitError" role="alert" aria-live="polite"></p>
-              <button type="submit" class="btn btn-primary btn-full mag" id="submitBtn">Send Message</button>
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- ═══ FOOTER ═══ -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div>
-        <p class="footer-name">Uday Varikuppala</p>
-        <p class="footer-role">Data Scientist · ML, NLP &amp; MLOps</p>
-      </div>
-      <p class="footer-copy">© 2026 Uday Varikuppala</p>
-    </div>
+  <footer class="colophon">
+    <p>Uday Varikuppala — Production Data Scientist</p>
+    <p>Set in Fraunces &amp; Inter · Ivory, ink &amp; bronze · © 2026</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/three@0.162.0/build/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.45/dist/lenis.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
