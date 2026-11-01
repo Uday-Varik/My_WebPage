@@ -93,6 +93,7 @@
 <section class="scene work-scene" id="work">
   <p class="mono-label">Selected Work</p>
   <h2 class="section-title focus-title">Four systems.<br />One stage.</h2>
+  <p class="proof-disclosure">Internal production systems. Live demos and code are not public.</p>
   <div class="filter-pills" role="group" aria-label="Filter case studies">
     <button class="filter-pill active" data-filter="all">All <span>4</span></button>
     <button class="filter-pill" data-filter="forecasting">Forecasting <span>2</span></button>
@@ -113,6 +114,21 @@
     <h3 class="case-title">Delivery delay, scored live.</h3>
     <p><strong>Problem.</strong> Dispatchers needed a signal while a package was still moving, not a report the next morning.</p>
     <p><strong>Decision and tradeoff.</strong> I chose live scoring over batch reporting. Batch reporting was simpler to build, but it arrived too late to change a route. Live scoring cost more engineering, and it was the only option that could change a decision the same day.</p>
+    <figure class="case-visual">
+      <svg viewBox="0 0 640 260" role="img" aria-label="Diagram: a forecast line rising over time, with a live score marker at the end">
+        <line x1="48" y1="212" x2="600" y2="212" stroke="#26262A" stroke-width="1" />
+        <line x1="48" y1="32" x2="48" y2="212" stroke="#26262A" stroke-width="1" />
+        <line x1="48" y1="152" x2="600" y2="152" stroke="#26262A" stroke-width="1" stroke-dasharray="4 6" />
+        <line x1="48" y1="92" x2="600" y2="92" stroke="#26262A" stroke-width="1" stroke-dasharray="4 6" />
+        <path d="M48 188 L148 168 L248 176 L348 128 L448 102 L600 48" fill="none" stroke="#7A9BFF" stroke-width="3" />
+        <circle cx="600" cy="48" r="7" fill="#7A9BFF" />
+        <circle cx="348" cy="128" r="4" fill="#F5F5F2" />
+        <text x="48" y="236" fill="#9B9B94" font-size="12" font-family="monospace">TIME</text>
+        <text x="48" y="24" fill="#9B9B94" font-size="12" font-family="monospace">FORECAST</text>
+        <text x="492" y="36" fill="#F5F5F2" font-size="12" font-family="monospace">LIVE SCORE</text>
+      </svg>
+      <figcaption>Diagram. Not client data.</figcaption>
+    </figure>
     <div class="diagram" id="delayDiagram" aria-label="Data flow: demand data to forecasting models to a forecast for dispatch planning, and live events to a delay score for dispatch rerouting">
       <span data-step="1">Demand data</span><i>→</i><span data-step="2">XGBoost, LightGBM, Prophet</span><i>→</i><span data-step="2 5">SageMaker forecast</span><i>→</i><span data-step="4">Dispatch planning</span>
       <span data-step="1">Live events</span><i>→</i><span data-step="2">Lambda and SageMaker</span><i>→</i><span data-step="2 3 5">Delay score</span><i>→</i><span data-step="4">Dispatch reroute</span>
@@ -136,7 +152,6 @@
     </div>
     <p><strong>What I built.</strong> Demand forecasting on SageMaker, and a real-time delay scoring service on Lambda and SageMaker that answers in under 60 milliseconds, more than 50,000 times a day.</p>
     <p class="result"><strong>Result.</strong> Forecast accuracy up 31% over the prior baseline.</p>
-    <p class="case-links"><strong>Links.</strong> Live demo: not available. Code: not public. This was an internal production system.</p>
   </article>
 
   <article class="case" data-case="1" data-kind="language">
@@ -144,12 +159,29 @@
     <h3 class="case-title">Complaints, routed by reading them.</h3>
     <p><strong>Problem.</strong> Routing a complaint depended on who picked up the ticket, so the same complaint could take different paths.</p>
     <p><strong>Decision and tradeoff.</strong> I chose a trained classifier with retrieval over keyword rules. Rules were easier to explain, but they broke on new wording. A trained model handled new wording, and retrieval grounded its answer in internal knowledge instead of guessing.</p>
+    <figure class="case-visual">
+      <svg viewBox="0 0 640 260" role="img" aria-label="Diagram: a complaint is classified, checked against internal knowledge, and sent to the right team">
+        <rect x="24" y="104" width="128" height="52" rx="10" fill="none" stroke="#F5F5F2" stroke-width="1" />
+        <text x="88" y="134" fill="#F5F5F2" font-size="13" font-family="monospace" text-anchor="middle">COMPLAINT</text>
+        <rect x="256" y="48" width="128" height="52" rx="10" fill="none" stroke="#7A9BFF" stroke-width="1" />
+        <text x="320" y="78" fill="#F5F5F2" font-size="13" font-family="monospace" text-anchor="middle">BERT</text>
+        <rect x="256" y="160" width="128" height="52" rx="10" fill="none" stroke="#7A9BFF" stroke-width="1" />
+        <text x="320" y="190" fill="#F5F5F2" font-size="13" font-family="monospace" text-anchor="middle">RAG</text>
+        <rect x="488" y="104" width="128" height="52" rx="10" fill="#121214" stroke="#F5F5F2" stroke-width="1" />
+        <text x="552" y="134" fill="#F5F5F2" font-size="13" font-family="monospace" text-anchor="middle">RIGHT TEAM</text>
+        <line x1="152" y1="130" x2="256" y2="74" stroke="#7A9BFF" stroke-width="2" />
+        <line x1="152" y1="130" x2="256" y2="186" stroke="#7A9BFF" stroke-width="2" />
+        <line x1="384" y1="74" x2="488" y2="130" stroke="#7A9BFF" stroke-width="2" />
+        <line x1="384" y1="186" x2="488" y2="130" stroke="#7A9BFF" stroke-width="2" />
+        <text x="24" y="240" fill="#9B9B94" font-size="12" font-family="monospace">CLASSIFY, THEN CHECK, THEN ROUTE</text>
+      </svg>
+      <figcaption>Diagram. Not client data.</figcaption>
+    </figure>
     <div class="diagram" aria-label="Data flow: complaint text to BERT classifier to LangChain retrieval over internal knowledge to the right team with an answer">
       <span>Complaint text</span><i>→</i><span>BERT classifier</span><i>→</i><span>LangChain RAG, internal knowledge</span><i>→</i><span>Right team, with an answer</span>
     </div>
     <p><strong>What I built.</strong> A fine-tuned BERT classifier paired with a LangChain RAG pipeline over internal knowledge bases, so a complaint is classified, matched to the right internal answer, and sent to the right team.</p>
     <p class="result"><strong>Result.</strong> Escalation handling time reduced.</p>
-    <p class="case-links"><strong>Links.</strong> Live demo: not available. Code: not public. This was an internal production system.</p>
   </article>
 
   <article class="case" data-case="2" data-kind="forecasting">
@@ -157,13 +189,28 @@
     <h3 class="case-title">No shows, predicted with context.</h3>
     <p><strong>Problem.</strong> Clinics lost whole days to empty rooms, and scheduling ignored why people missed appointments.</p>
     <p><strong>Decision and tradeoff.</strong> I chose a model with explanations over a more complex model without them. The complex model might have scored slightly higher, but clinic staff would not have trusted it. Explanations were the difference between a score and a scheduling change.</p>
+    <figure class="case-visual">
+      <svg viewBox="0 0 640 260" role="img" aria-label="Diagram: horizontal bars showing relative influence, longest for days booked ahead, then rain, then time, place, and weather">
+        <text x="24" y="52" fill="#F5F5F2" font-size="13" font-family="monospace">BOOKED AHEAD</text>
+        <rect x="24" y="64" width="440" height="18" rx="9" fill="#7A9BFF" />
+        <text x="24" y="116" fill="#F5F5F2" font-size="13" font-family="monospace">RAIN</text>
+        <rect x="24" y="128" width="320" height="18" rx="9" fill="#7A9BFF" />
+        <text x="24" y="180" fill="#F5F5F2" font-size="13" font-family="monospace">TIME</text>
+        <rect x="24" y="192" width="240" height="18" rx="9" fill="#7A9BFF" />
+        <text x="340" y="52" fill="#9B9B94" font-size="12" font-family="monospace">PLACE</text>
+        <rect x="340" y="64" width="180" height="18" rx="9" fill="#7A9BFF" />
+        <text x="340" y="116" fill="#9B9B94" font-size="12" font-family="monospace">WEATHER</text>
+        <rect x="340" y="128" width="140" height="18" rx="9" fill="#7A9BFF" />
+        <text x="24" y="240" fill="#9B9B94" font-size="12" font-family="monospace">BAR LENGTH SHOWS RELATIVE INFLUENCE ONLY. NO SCORE IS SHOWN.</text>
+      </svg>
+      <figcaption>Diagram. Not client data.</figcaption>
+    </figure>
     <div class="diagram" aria-label="Data flow: appointment, behaviour, place, time, and weather to XGBoost and logistic regression to a scoring API to clinic scheduling, with SHAP explanations">
       <span>Appointment, behaviour, place, time, weather</span><i>→</i><span>XGBoost, logistic regression</span><i>→</i><span>Scoring API</span><i>→</i><span>Clinic scheduling</span>
       <span>SHAP explanation</span><i>→</i><span>Clinic team</span>
     </div>
     <p><strong>What I built.</strong> A no-show prediction model using behavioural, demographic, and geospatial data with temporal and weather features, served through a real-time scoring API with SHAP explanations, more than 10,000 predictions a day.</p>
     <p class="result"><strong>Result.</strong> About 20% performance improvement over the prior approach.</p>
-    <p class="case-links"><strong>Links.</strong> Live demo: not available. Code: not public. This was an internal production system.</p>
   </article>
 
   <article class="case" data-case="3" data-kind="risk">
@@ -171,13 +218,25 @@
     <h3 class="case-title">Lending risk, in small patterns.</h3>
     <p><strong>Problem.</strong> A loan that goes bad shows up months later, in small patterns, and data from three sources did not agree.</p>
     <p><strong>Decision and tradeoff.</strong> I chose to fix the data first, before tuning the model. Tuning first would have looked faster, but a model trained on disagreeing data would have learned the disagreement. Consolidation and quality checks came first, and the model came second.</p>
+    <figure class="case-visual">
+      <svg viewBox="0 0 640 260" role="img" aria-label="Diagram: small bars in a pattern over time, with a risk line rising across them">
+        <line x1="48" y1="212" x2="600" y2="212" stroke="#26262A" stroke-width="1" />
+        <g fill="#26262A">
+          <rect x="64" y="180" width="28" height="32" /><rect x="104" y="168" width="28" height="44" /><rect x="144" y="188" width="28" height="24" /><rect x="184" y="156" width="28" height="56" /><rect x="224" y="172" width="28" height="40" /><rect x="264" y="148" width="28" height="64" /><rect x="304" y="164" width="28" height="48" /><rect x="344" y="140" width="28" height="72" /><rect x="384" y="156" width="28" height="56" /><rect x="424" y="132" width="28" height="80" /><rect x="464" y="148" width="28" height="64" /><rect x="504" y="124" width="28" height="88" />
+        </g>
+        <path d="M64 176 L144 168 L224 152 L304 140 L384 128 L544 104" fill="none" stroke="#7A9BFF" stroke-width="3" />
+        <circle cx="544" cy="104" r="6" fill="#7A9BFF" />
+        <text x="48" y="236" fill="#9B9B94" font-size="12" font-family="monospace">TIME</text>
+        <text x="48" y="24" fill="#9B9B94" font-size="12" font-family="monospace">SMALL PATTERNS, THREE SOURCES</text>
+      </svg>
+      <figcaption>Diagram. Not client data.</figcaption>
+    </figure>
     <div class="diagram" aria-label="Data flow: origination, servicing, and underwriting data to Snowflake to XGBoost and survival models to a risk score, with quality checks and Power BI reporting">
       <span>Origination, servicing, underwriting</span><i>→</i><span>Snowflake</span><i>→</i><span>XGBoost, survival analysis</span><i>→</i><span>Risk score</span>
       <span>Great Expectations checks</span><i>→</i><span>Power BI KPIs</span>
     </div>
     <p><strong>What I built.</strong> Prepayment and delinquency models, Snowflake ETL and ELT, automated amortization and loan schedules in Python, and data-quality checks, with Power BI dashboards for senior stakeholders.</p>
     <p class="result"><strong>Result.</strong> About $50,000 a year saved by fixing queries and warehouse settings.</p>
-    <p class="case-links"><strong>Links.</strong> Live demo: not available. Code: not public. This was an internal production system.</p>
   </article>
 
   <div class="ledger">
@@ -208,6 +267,24 @@
       <p><a href="#work" data-case-link="3">Read case →</a></p>
     </div>
   </div>
+
+  <div class="proof-block">
+    <p class="mono-label">Public proof</p>
+    <h3>Read the code, on synthetic data.</h3>
+    <p>These two repos mirror the production patterns above. They use synthetic data only. They are ready to publish, awaiting approval. No production data is used, and no result or metric is claimed.</p>
+    <ul class="proof-list">
+      <li>
+        <p class="proof-title">Forecast pipeline with drift monitoring and retraining</p>
+        <p class="proof-note">Synthetic demand and live events, forecast and delay score, drift check, retraining check, version logged, human review.</p>
+        <p><a href="#" class="proof-link">LINK TO BE ADDED AFTER PUBLISHING</a></p>
+      </li>
+      <li>
+        <p class="proof-title">RAG router with synthetic tickets</p>
+        <p class="proof-note">Synthetic complaint tickets, classifier, retrieval over synthetic knowledge, routing to a team, with an answer.</p>
+        <p><a href="#" class="proof-link">LINK TO BE ADDED AFTER PUBLISHING</a></p>
+      </li>
+    </ul>
+  </div>
 </section>
 
 <!-- 4. Experience: roles with impact numbers only where verified, and only where the number does not appear elsewhere. -->
@@ -234,7 +311,7 @@
   </div>
 </section>
 
-<!-- 5. Demos: 4 working demos, labelled Demo, illustrative only, synthetic values, every control works. -->
+<!-- 5. Demos: 4 working demos, labelled Demo, illustrative only, synthetic values, every control works. Result first, controls second. -->
 <section class="scene" id="demos">
   <p class="mono-label">Demos</p>
   <h2 class="section-title focus-title">Try the shape<br />of the system.</h2>
@@ -243,61 +320,113 @@
   <article class="demo-card">
     <p class="mono-label">Demo 01 / Forecasting / Illustrative only</p>
     <h3>Delay risk simulator</h3>
-    <label>Distance in miles: <output id="distOut">250</output><input type="range" id="distRange" min="10" max="1000" value="250" /></label>
-    <label>Bad weather: <output id="weatherOut">Low</output><input type="range" id="weatherRange" min="0" max="2" value="0" /></label>
-    <label>Hub load: <output id="loadOut">Normal</output><input type="range" id="loadRange" min="0" max="2" value="1" /></label>
-    <p class="demo-result" id="delayResult" aria-live="polite">Estimated delay risk: Low</p>
-    <p class="demo-result">Risk score: <span id="delayScore">23</span> / 100 (synthetic)</p>
-    <p class="demo-result">Confidence: <span id="delayConfidence">High</span></p>
-    <div class="factor-bars" aria-hidden="true">
-      <div><span>Distance</span><i id="barDistance"></i></div>
-      <div><span>Weather</span><i id="barWeather"></i></div>
-      <div><span>Hub load</span><i id="barLoad"></i></div>
+    <div class="demo-result-panel" aria-live="polite">
+      <p class="demo-score-line"><span class="demo-score" id="delayScore">23</span><span class="demo-score-max"> / 100, synthetic</span></p>
+      <p class="demo-risk" id="delayResult">Estimated delay risk: Low</p>
+      <div class="factor-bars" aria-hidden="true">
+        <div><span>Distance</span><i id="barDistance"></i></div>
+        <div><span>Weather</span><i id="barWeather"></i></div>
+        <div><span>Hub load</span><i id="barLoad"></i></div>
+      </div>
+      <div class="demo-status">
+        <p>Confidence: <span id="delayConfidence">High</span></p>
+        <p>What happens next: a person makes the final call.</p>
+        <p class="demo-guardrail" id="delayGuardrail" hidden>Held for human review. No automatic reroute.</p>
+      </div>
     </div>
-    <p class="demo-guardrail" id="delayGuardrail" hidden>Held for human review. No automatic reroute.</p>
-    <p class="demo-note">What happens next: a person makes the final call.</p>
-    <button class="pill" id="delayReset" type="button">Reset</button>
+    <div class="demo-controls">
+      <p class="mono-label">Controls</p>
+      <div class="demo-control">
+        <label for="distRange">Distance in miles: <output id="distOut" for="distRange">250</output></label>
+        <input type="range" id="distRange" min="10" max="1000" value="250" />
+      </div>
+      <div class="demo-control">
+        <label for="weatherRange">Bad weather: <output id="weatherOut" for="weatherRange">Low</output></label>
+        <input type="range" id="weatherRange" min="0" max="2" value="0" />
+      </div>
+      <div class="demo-control">
+        <label for="loadRange">Hub load: <output id="loadOut" for="loadRange">Normal</output></label>
+        <input type="range" id="loadRange" min="0" max="2" value="1" />
+      </div>
+      <button class="pill" id="delayReset" type="button">Reset</button>
+    </div>
   </article>
 
   <article class="demo-card">
     <p class="mono-label">Demo 02 / Language / Illustrative only</p>
     <h3>Complaint routing</h3>
-    <label>Pick a complaint type
-      <select id="complaintSelect">
-        <option value="">Choose one</option>
-        <option value="delivery">Delivery is late</option>
-        <option value="billing">Billing question</option>
-        <option value="damage">Package damaged</option>
-      </select>
-    </label>
-    <button class="pill" id="routeBtn" type="button">Route this complaint</button>
-    <p class="demo-result" id="routeResult" aria-live="polite">Pick a type, then route it.</p>
-    <p class="demo-note">This demo uses the three choices above. The production system reads free text.</p>
+    <div class="demo-result-panel" aria-live="polite">
+      <p class="demo-risk" id="routeResult">Pick a type, then route it.</p>
+      <div class="demo-status">
+        <p>What happens next: the right team receives the complaint, with an answer.</p>
+        <p class="demo-note">This demo uses the three choices below. The production system reads free text.</p>
+      </div>
+    </div>
+    <div class="demo-controls">
+      <p class="mono-label">Controls</p>
+      <fieldset class="choice-group">
+        <legend>Pick a complaint type</legend>
+        <label class="choice"><input type="radio" name="complaintType" id="complaintDelivery" value="delivery" /> Delivery is late</label>
+        <label class="choice"><input type="radio" name="complaintType" id="complaintBilling" value="billing" /> Billing question</label>
+        <label class="choice"><input type="radio" name="complaintType" id="complaintDamage" value="damage" /> Package damaged</label>
+      </fieldset>
+      <button class="pill" id="routeBtn" type="button">Route this complaint</button>
+    </div>
   </article>
 
   <article class="demo-card">
     <p class="mono-label">Demo 03 / Forecasting / Illustrative only</p>
     <h3>No-show predictor</h3>
-    <label>Days booked ahead: <output id="aheadOut">7</output><input type="range" id="aheadRange" min="0" max="30" value="7" /></label>
-    <label>Rain forecast: <output id="rainOut">No</output><input type="range" id="rainRange" min="0" max="1" value="0" /></label>
-    <p class="demo-result" id="noshowResult" aria-live="polite">Estimated no-show chance: Medium</p>
-    <div class="shap-bars" aria-hidden="true"><div><span>Booked ahead</span><i id="shapAhead"></i></div><div><span>Rain</span><i id="shapRain"></i></div></div>
+    <div class="demo-result-panel" aria-live="polite">
+      <p class="demo-score-line"><span class="demo-score" id="noshowChance">Medium</span></p>
+      <p class="demo-risk" id="noshowResult">Estimated no-show chance: Medium</p>
+      <div class="shap-bars" aria-hidden="true"><div><span>Booked ahead</span><i id="shapAhead"></i></div><div><span>Rain</span><i id="shapRain"></i></div></div>
+      <div class="demo-status">
+        <p>What happens next: the clinic team reviews the explanation, then decides on scheduling.</p>
+      </div>
+    </div>
+    <div class="demo-controls">
+      <p class="mono-label">Controls</p>
+      <div class="demo-control">
+        <label for="aheadRange">Days booked ahead: <output id="aheadOut" for="aheadRange">7</output></label>
+        <input type="range" id="aheadRange" min="0" max="30" value="7" />
+      </div>
+      <div class="demo-control">
+        <label for="rainRange">Rain forecast: <output id="rainOut" for="rainRange">No</output></label>
+        <input type="range" id="rainRange" min="0" max="1" value="0" />
+      </div>
+    </div>
   </article>
 
   <article class="demo-card">
     <p class="mono-label">Demo 04 / Automation / Illustrative only</p>
     <h3>Drift check</h3>
-    <label>Measured drift, percent: <output id="driftOut">4</output><input type="range" id="driftRange" min="0" max="20" value="4" /></label>
-    <label>Retrain threshold, percent: <output id="thresholdOut">8</output><input type="range" id="thresholdRange" min="1" max="20" value="8" /></label>
-    <button class="pill" id="driftBtn" type="button">Check drift</button>
-    <p class="demo-result" id="driftResult" aria-live="polite">Set drift and threshold, then check.</p>
-    <ul class="drift-status" id="driftStatus">
-      <li data-drift-status="detected">Drift detected</li>
-      <li data-drift-status="retrain">Retraining check triggered</li>
-      <li data-drift-status="version">Version logged</li>
-      <li data-drift-status="review">Human review required</li>
-    </ul>
-    <p class="demo-note">In production, a person makes the final call before a new version is released.</p>
+    <div class="demo-result-panel" aria-live="polite">
+      <p class="demo-score-line"><span class="demo-score" id="driftScore">4%</span><span class="demo-score-max"> measured drift, synthetic</span></p>
+      <p class="demo-risk" id="driftResult">Set drift and threshold, then check.</p>
+      <div class="demo-status">
+        <ul class="drift-status" id="driftStatus" hidden>
+          <li data-drift-status="detected">Drift detected</li>
+          <li data-drift-status="retrain">Retraining check triggered</li>
+          <li data-drift-status="version">Version logged</li>
+          <li data-drift-status="review">Human review required</li>
+        </ul>
+        <p class="demo-note">In production, a person makes the final call before a new version is released.</p>
+      </div>
+    </div>
+    <div class="demo-controls">
+      <p class="mono-label">Controls</p>
+      <div class="demo-control">
+        <label for="driftRange">Measured drift, percent: <output id="driftOut" for="driftRange">4</output></label>
+        <input type="range" id="driftRange" min="0" max="20" value="4" />
+      </div>
+      <div class="demo-control">
+        <label for="thresholdRange">Retrain threshold, percent: <output id="thresholdOut" for="thresholdRange">8</output></label>
+        <input type="range" id="thresholdRange" min="1" max="20" value="8" />
+      </div>
+      <button class="pill" id="driftBtn" type="button">Check drift</button>
+      <button class="pill" id="driftReset" type="button">Reset</button>
+    </div>
   </article>
 </section>
 
@@ -341,36 +470,37 @@
     <li><span class="step-badge">03</span><div><h3>Measure and improve</h3><p>Watch what happens after launch, test the change, and keep what works. A model earns its keep after it ships.</p></div></li>
   </ol>
   <div class="accordion">
-    <button class="acc-btn" aria-expanded="false">When do I choose a simpler model? <span aria-hidden="true">→</span></button>
-    <div class="acc-panel"><p>When the simpler model can be explained, checked, and fixed by the team that will live with it. Complexity has to buy a decision, not just a score.</p></div>
-    <button class="acc-btn" aria-expanded="false">When do I automate? <span aria-hidden="true">→</span></button>
-    <div class="acc-panel"><p>When the work repeats, the checks are clear, and a person still makes the final call. Automation without a guardrail is not a shortcut.</p></div>
-    <button class="acc-btn" aria-expanded="false">What do I do when data disagrees? <span aria-hidden="true">→</span></button>
-    <div class="acc-panel"><p>Fix the data first. A model trained on disagreeing data learns the disagreement.</p></div>
+    <button class="acc-btn" aria-expanded="false" aria-controls="accPanel1" id="accBtn1">When do I choose a simpler model? <span aria-hidden="true">→</span></button>
+    <div class="acc-panel" id="accPanel1" role="region" aria-labelledby="accBtn1"><p>When the simpler model can be explained, checked, and fixed by the team that will live with it. Complexity has to buy a decision, not just a score.</p></div>
+    <button class="acc-btn" aria-expanded="false" aria-controls="accPanel2" id="accBtn2">When do I automate? <span aria-hidden="true">→</span></button>
+    <div class="acc-panel" id="accPanel2" role="region" aria-labelledby="accBtn2"><p>When the work repeats, the checks are clear, and a person still makes the final call. Automation without a guardrail is not a shortcut.</p></div>
+    <button class="acc-btn" aria-expanded="false" aria-controls="accPanel3" id="accBtn3">What do I do when data disagrees? <span aria-hidden="true">→</span></button>
+    <div class="acc-panel" id="accPanel3" role="region" aria-labelledby="accBtn3"><p>Fix the data first. A model trained on disagreeing data learns the disagreement.</p></div>
   </div>
 </section>
 
-<!-- 9. Contact: centered and quiet, purpose field, purpose in the subject, no email as visible text. -->
+<!-- 9. Contact: centered and quiet, purpose field, purpose in the subject, no email as visible text. Form is static HTML, not injected by JavaScript. No form backend: submit opens a pre-filled mail message. -->
 <section class="scene contact-scene" id="contact">
   <p class="mono-label">Contact</p>
   <h2 class="section-title focus-title">Write here.</h2>
   <p class="contact-intro">I am open to Data Scientist and ML Engineer roles, technical consulting, and research work, most usefully where forecasting and language systems meet production constraints.</p>
-  <noscript><p class="form-note">The contact links need JavaScript. The text on this page still reads without it.</p></noscript>
   <form id="contactForm" novalidate>
-    <p class="form-note">This form opens a pre-filled message in your mail app. It does not send anything by itself, and it does not show an address on the page.</p>
+    <p class="form-note">This form opens a pre-filled message in your mail app. It does not send anything by itself, and it does not show an address on the page. No form backend is used.</p>
     <p class="form-success" id="formSuccess" role="alert">Your mail app should now be open with the message ready to send.</p>
-    <label>I am writing about
-      <select id="contactPurpose">
-        <option value="Collaboration">Collaboration</option>
-        <option value="Hiring">Hiring me</option>
-        <option value="Other">Other</option>
-      </select>
-    </label>
-    <label>Name<input type="text" id="contactName" placeholder="Your name" autocomplete="name" required /></label>
+    <label for="contactPurpose">I am writing about</label>
+    <select id="contactPurpose" name="purpose">
+      <option value="Collaboration">Collaboration</option>
+      <option value="Hiring me">Hiring me</option>
+      <option value="Other">Other</option>
+    </select>
+    <label for="contactName">Name</label>
+    <input type="text" id="contactName" name="name" placeholder="Your name" autocomplete="name" required />
     <span class="field-error" id="nameError" role="alert"></span>
-    <label>Your email<input type="email" id="contactEmail" placeholder="Your email address" autocomplete="email" required /></label>
+    <label for="contactEmail">Your email</label>
+    <input type="email" id="contactEmail" name="email" placeholder="Your email address" autocomplete="email" required />
     <span class="field-error" id="emailError" role="alert"></span>
-    <label>Message<textarea id="contactMessage" placeholder="What are you building?" maxlength="500" required></textarea></label>
+    <label for="contactMessage">Message</label>
+    <textarea id="contactMessage" name="message" placeholder="What are you building?" maxlength="500" required></textarea>
     <span class="char-count" id="charCounter">0 / 500</span>
     <span class="field-error" id="msgError" role="alert"></span>
     <p class="form-submit-error" id="formSubmitError" role="alert"></p>

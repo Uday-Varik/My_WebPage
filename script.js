@@ -144,7 +144,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   var routeBtn = document.getElementById('routeBtn');
   if (routeBtn) routeBtn.addEventListener('click', function () {
-    var v = document.getElementById('complaintSelect').value;
+    var checked = document.querySelector('input[name="complaintType"]:checked');
+    var v = checked ? checked.value : '';
     var routes = { delivery: 'Delivery operations team', billing: 'Billing support team', damage: 'Claims and damage team' };
     document.getElementById('routeResult').textContent = v ? 'Routed to: ' + routes[v] + ' (illustrative)' : 'Pick a complaint type first.';
   });
@@ -154,7 +155,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var a = parseInt(ahead.value, 10), r = parseInt(rain.value, 10);
     document.getElementById('aheadOut').textContent = a;
     document.getElementById('rainOut').textContent = r ? 'Yes' : 'No';
-    document.getElementById('noshowResult').textContent = 'Estimated no-show chance: ' + (a > 14 || r ? 'High' : a > 7 ? 'Medium' : 'Low') + ' (illustrative)';
+    var chance = a > 14 || r ? 'High' : a > 7 ? 'Medium' : 'Low';
+    document.getElementById('noshowResult').textContent = 'Estimated no-show chance: ' + chance + ' (illustrative)';
+    var chanceEl = document.getElementById('noshowChance');
+    if (chanceEl) chanceEl.textContent = chance;
     var shapA = document.getElementById('shapAhead'), shapR = document.getElementById('shapRain');
     if (shapA) shapA.style.width = Math.min(100, a * 3 + 20) + 'px';
     if (shapR) shapR.style.width = r ? '80px' : '15px';
@@ -162,13 +166,18 @@ document.addEventListener('DOMContentLoaded', function () {
   [ahead, rain].forEach(function (el) { if (el) el.addEventListener('input', updateNoshow); });
   updateNoshow();
   var drift = document.getElementById('driftRange'), threshold = document.getElementById('thresholdRange');
+  var driftStatus = document.getElementById('driftStatus');
   function clearDriftStatus() {
+    if (driftStatus) driftStatus.hidden = true;
     document.querySelectorAll('#driftStatus li').forEach(function (li) { li.classList.remove('on'); });
   }
   function updateDriftLabels() {
     if (!drift) return;
     document.getElementById('driftOut').textContent = drift.value;
     document.getElementById('thresholdOut').textContent = threshold.value;
+    var scoreEl = document.getElementById('driftScore');
+    if (scoreEl) scoreEl.textContent = drift.value + '%';
+    document.getElementById('driftResult').textContent = 'Set drift and threshold, then check.';
     clearDriftStatus();
   }
   [drift, threshold].forEach(function (el) { if (el) el.addEventListener('input', updateDriftLabels); });
@@ -177,10 +186,17 @@ document.addEventListener('DOMContentLoaded', function () {
   if (driftBtn) driftBtn.addEventListener('click', function () {
     var d = parseInt(drift.value, 10), t = parseInt(threshold.value, 10);
     var exceeded = d >= t;
+    if (driftStatus) driftStatus.hidden = !exceeded;
     document.querySelectorAll('#driftStatus li').forEach(function (li) { li.classList.toggle('on', exceeded); });
     document.getElementById('driftResult').textContent = exceeded
       ? 'Drift ' + d + '% is at or above the ' + t + '% threshold. (illustrative)'
       : 'Drift ' + d + '% is below the ' + t + '% threshold. No retraining. Monitoring continues. (illustrative)';
+  });
+  var driftReset = document.getElementById('driftReset');
+  if (driftReset) driftReset.addEventListener('click', function () {
+    drift.value = 4; threshold.value = 8;
+    document.getElementById('driftResult').textContent = 'Set drift and threshold, then check.';
+    updateDriftLabels();
   });
 });
 

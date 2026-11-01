@@ -199,3 +199,62 @@ body.menu-open{overflow:hidden}
 .ledger-row a{color:var(--accent);font-weight:600;text-decoration:none;white-space:nowrap}
 @media (max-width:900px){.ledger-row{grid-template-columns:1fr}}
 
+/* V13 polish only: headline scale and spacing, section white space, larger diagrams, case visuals, proof block, demo product panels. Existing tokens and fonts only. No new motion. */
+.scene{padding:clamp(5.5rem,9vw,7.5rem) clamp(1.25rem,4vw,3rem)}
+.section-title{font-size:clamp(2.2rem,5vw,3.9rem);line-height:1;letter-spacing:0;margin:0 0 1.5rem}
+.hero-scene h1{font-size:clamp(3.4rem,9vw,6.5rem);line-height:.98;letter-spacing:-.015em;margin:0 0 1.25rem}
+.hero-sentence{line-height:1.5}
+.case-title{font-size:clamp(1.6rem,3.2vw,2.4rem);line-height:1.08;letter-spacing:0;margin:0 0 1.25rem}
+.case-eyebrow{letter-spacing:.12em}
+.proof-disclosure{color:var(--body);border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:10px;background:var(--panel);padding:.9rem 1.1rem;max-width:70ch;position:relative;z-index:1;margin:0 0 1rem}
+.diagram{padding:1.6rem;gap:.8rem;margin:2rem 0}
+.diagram span{padding:.6rem 1.1rem;font-size:1rem}
+.case-visual{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);padding:1.2rem;margin:2rem 0;max-width:760px}
+.case-visual svg{width:100%;height:auto;display:block}
+.case-visual figcaption{color:var(--muted);font-size:.9rem;padding-top:.6rem}
+.proof-block{border-top:1px solid var(--line);margin-top:3rem;padding-top:2rem;position:relative;z-index:1}
+.proof-block h3{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:1.5rem;text-transform:uppercase;letter-spacing:0;margin:0 0 .75rem}
+.proof-block p{color:var(--body);max-width:70ch}
+.proof-list{list-style:none;margin:1.5rem 0 0;padding:0;display:grid;gap:0}
+.proof-list li{border-top:1px solid var(--line);padding:1.2rem 0}
+.proof-list li:last-child{border-bottom:1px solid var(--line)}
+.proof-title{font-weight:600;color:var(--ink);margin:0 0 .25rem}
+.proof-note{color:var(--muted);margin:0 0 .5rem}
+.proof-link{color:var(--accent);font-weight:600;text-decoration:none;letter-spacing:.04em}
+.demo-card{padding:2rem}
+.demo-result-panel{border-bottom:1px solid var(--line);padding-bottom:1.5rem;margin-bottom:1.5rem}
+.demo-score-line{margin:0 0 .25rem}
+.demo-score{font-family:"Space Grotesk",sans-serif;font-weight:500;font-size:clamp(3rem,7vw,4.5rem);line-height:1;color:var(--ink)}
+.demo-score-max{color:var(--muted);font-size:.95rem}
+.demo-risk{font-size:1.25rem;font-weight:600;color:var(--ink);margin:.5rem 0 1rem}
+.demo-status{border:1px solid var(--line);border-radius:12px;background:var(--panel-2);padding:1rem 1.1rem;margin-top:1.25rem}
+.demo-status p{margin:.25rem 0;color:var(--body)}
+.demo-status .demo-note{margin:.25rem 0}
+.demo-status .demo-guardrail{margin:.75rem 0 0}
+.demo-controls .mono-label{margin:0 0 .5rem}
+.demo-control{margin-top:1rem}
+.demo-control label{display:block;font-weight:600;margin:0 0 .3rem}
+.demo-control input[type="range"]{width:100%;margin:0;accent-color:var(--accent)}
+.demo-card .demo-controls label{margin-top:0}
+.choice-group{border:0;padding:0;margin:1rem 0 0}
+.choice-group legend{font-weight:600;padding:0;margin-bottom:.6rem}
+.choice{display:flex;align-items:center;gap:.6rem;border:1px solid var(--line);border-radius:999px;padding:.6rem 1rem;margin:0 0 .6rem;cursor:pointer;font-weight:600;color:var(--ink)}
+.choice input{accent-color:var(--accent);width:18px;height:18px;flex-shrink:0}
+.choice:has(input:checked){border-color:var(--accent);background:var(--accent-soft)}
+.choice:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:3px}
+.demo-card .choice-group + button,.demo-card .demo-control + button{margin-top:1rem}
+.demo-card button + button{margin-left:.6rem}
+.drift-status{margin:0 0 .5rem}
+.drift-status[hidden]{display:none}
+.contact-scene label{margin-top:1.2rem}
+.contact-scene select{margin-top:.3rem}
+@media (max-width:640px){
+  .scene{padding-left:1.25rem;padding-right:1.25rem}
+  .hero-scene h1{font-size:3.4rem}
+  .section-title{font-size:2.2rem}
+  .case-visual{padding:.8rem}
+  .demo-card{padding:1.4rem}
+  .demo-score{font-size:3rem}
+  .proof-list li{padding:1rem 0}
+}
+
